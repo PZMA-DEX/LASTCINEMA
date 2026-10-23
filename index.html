@@ -79,7 +79,18 @@ html,body{margin:0;width:100%;height:100%;overscroll-behavior:none}html{overflow
 @media(max-width:370px){.v13-controls{padding:11px 10px 9px;gap:9px}.v13-controls .v12-pad{width:99px;height:99px;flex-basis:99px}.v13-controls .v12-knob{width:47px;height:47px}.v13-action{width:82px;height:82px}.v13-action-group{min-width:94px}}
 @media(prefers-reduced-motion:reduce){.v13-map-stage .v11-cell.has-object.nearby:before{animation:none}}
 .gender-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0 16px}.gender-btn{border:1px solid rgba(221,196,146,.45);border-radius:14px;background:rgba(255,255,255,.065);color:#f4ede0;font-size:16px;font-weight:700;min-height:52px;touch-action:manipulation}.gender-btn.chosen{border-color:#e6c48c;background:rgba(210,170,93,.25);box-shadow:inset 0 0 0 1px rgba(232,195,130,.55)}
-</style><style>.admin-map-back{display:flex;gap:7px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 10px}.admin-map-back small{color:#d7c098;font-size:11px}body.admin-mode:has(.admin-map-back) nav.nav{display:none!important}</style></head><body><header><div class="btk-brand" aria-label="마지막 상영회, Made by BTK"><span class="btk-brand-title">◈ 마지막 상영회</span><span class="btk-brand-credit">MADE BY <strong>BTK</strong></span></div><div><small id="phaseTop">대기</small> <button class="btn outline" onclick="openAdmin()" style="padding:5px 8px;min-height:29px;font-size:11px">관리자</button> </div></header><main class="shell" id="app"></main><nav class="nav" id="nav"></nav><style>.v3-subtitle{color:var(--gold);letter-spacing:.15em;font:600 14px Georgia,serif;margin-top:-8px}
+</style><style>.admin-map-back{display:flex;gap:7px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 10px}.admin-map-back small{color:#d7c098;font-size:11px}body.admin-mode:has(.admin-map-back) nav.nav{display:none!important}</style><style id="button-flow-2042-fixes">
+.v3-opening.v23-intro.v25-film{position:fixed;inset:0;height:100vh;height:100dvh;z-index:13000;display:block;padding:0;background:#02050a;overflow:hidden}
+.v25-film .v25-frame{position:absolute;left:50%;top:50%;width:min(100vw,56.25dvh);height:min(177.7778vw,100dvh);transform:translate(-50%,-50%);overflow:hidden;background:#040a12}
+.v25-film .v25-opening-video{position:absolute;inset:0;width:100%;height:100%;max-height:none;max-width:none;object-fit:contain;background:#02050a}
+.v25-film .v23-intro-bar{position:absolute;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);z-index:5;display:flex;gap:8px;justify-content:center;align-items:center;max-width:480px;margin:auto;padding:0;font-size:12px}
+.v25-film .v23-intro-bar button{min-height:44px;min-width:80px;padding:7px 15px;font-size:12px;background:#07121bd9;border:1px solid #b3bfd94d;color:#dfe7ef;border-radius:20px;backdrop-filter:blur(10px);touch-action:manipulation}
+.v25-film .v25-play-prompt{position:absolute;z-index:6;left:50%;top:48%;transform:translate(-50%,-50%);width:max-content;max-width:85%;min-height:48px;padding:14px 22px;border:1px solid #c8a768aa;border-radius:30px;background:#07121be8;color:#f4ddb6;box-shadow:0 8px 24px #0009;font-size:16px;line-height:1.4;touch-action:manipulation}
+.v25-film .v25-play-prompt[hidden],.v25-film .v25-video-error[hidden]{display:none!important}
+.v25-film .v25-video-error{position:absolute;z-index:5;top:8%;left:8%;right:8%;max-height:65%;overflow:auto;text-align:center;font-size:14px;color:#dac9b2;line-height:1.7;background:#07121be8;border-radius:12px;padding:12px}
+.v25-film.video-unavailable .v25-frame{background:radial-gradient(ellipse at 50% 25%,#1c3044,#040a12 75%)}
+@media(max-height:480px) and (orientation:landscape){.v25-film .v23-intro-bar{bottom:calc(env(safe-area-inset-bottom,0px) + 6px)}.v25-film .v23-intro-bar button{min-height:38px}}
+</style></head><body><header><div class="btk-brand" aria-label="마지막 상영회, Made by BTK"><span class="btk-brand-title">◈ 마지막 상영회</span><span class="btk-brand-credit">MADE BY <strong>BTK</strong></span></div><div><small id="phaseTop">대기</small> <button class="btn outline" onclick="openAdmin()" style="padding:5px 8px;min-height:29px;font-size:11px">관리자</button> </div></header><main class="shell" id="app"></main><nav class="nav" id="nav"></nav><style>.v3-subtitle{color:var(--gold);letter-spacing:.15em;font:600 14px Georgia,serif;margin-top:-8px}
 .v3-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.v3-grid .btn{width:100%}.v3-meta{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.v3-tabs{display:flex;gap:6px;overflow-x:auto;margin:12px 0}.v3-tabs .btn{white-space:nowrap;min-height:38px;padding:7px 12px}.v3-timeline{border-left:2px solid #5c5241;margin-left:7px;padding-left:16px}.v3-timeline .entry{padding:13px 0}.v3-timeline b{color:var(--gold)}.v3-profile{display:grid;grid-template-columns:100px 1fr;gap:14px;align-items:center}.v3-profile img{width:100%;height:125px;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line)}.v3-cast-img{width:52px;height:64px;object-fit:cover;object-position:top;border-radius:8px;background:#263342}.v3-cast-fallback{width:52px;height:64px;display:grid;place-items:center;border-radius:8px;background:#263342;color:var(--gold);font-size:23px}.v3-line{white-space:pre-line;line-height:1.85}.v3-score{font-variant-numeric:tabular-nums;color:var(--gold);font-size:24px;font-weight:800}.v3-table{width:100%;border-collapse:collapse;font-size:12px}.v3-table th,.v3-table td{border-bottom:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}.v3-table th{color:var(--gold)}.v3-check{display:flex;align-items:flex-start;gap:10px;margin:9px 0;padding:12px;background:#ffffff07;border-radius:9px}.v3-check input{margin-top:5px}.v3-notice{position:fixed;inset:0;z-index:12000;background:#000b;display:grid;place-items:center;padding:20px}.v3-notice>div{max-width:520px;width:100%;background:var(--surface);padding:20px;border:1px solid var(--gold);border-radius:16px}.v3-opening{position:fixed;inset:0;z-index:13000;background:#020406;display:flex;flex-direction:column;justify-content:center;align-items:center}.v3-opening video{width:100%;max-height:calc(100dvh - 160px);object-fit:contain;background:#000}.v3-opening-bar{display:flex;justify-content:center;gap:10px;padding:12px;flex-wrap:wrap}.v3-opening .v3-opening-fallback{max-width:620px;padding:20px;line-height:1.85}.v3-memo-button{position:fixed;right:15px;bottom:calc(86px + env(safe-area-inset-bottom,0px));z-index:8500;box-shadow:0 5px 20px #0008}.v3-brief{color:var(--mute);font-size:13px}.v3-message{padding:12px 14px;border-radius:12px;margin:10px 0;background:#ffffff09;white-space:pre-wrap}.v3-message.me{background:#4a3b2266;margin-left:28px}.v3-message.them{margin-right:28px}.v3-locked{color:#b8c3d1;border:1px solid #4e5662;padding:12px;border-radius:9px}.v3-badge{display:inline-block;border-radius:999px;border:1px solid #8b734e;padding:2px 9px;font-size:11px;color:var(--gold)}.v3-end-title{font:700 28px Georgia,serif;color:var(--gold);margin-top:8px}.v3-warning{color:#ffc5a1}.v3-empty{color:var(--mute);padding:12px 0}.v3-secret{border-left:3px solid #b38a56;background:#2b211955;padding:13px 15px;border-radius:0 9px 9px 0}nav.nav{grid-template-columns:repeat(5,minmax(0,1fr))}nav.nav button{font-size:10.5px}.home-timer b{font-variant-numeric:tabular-nums;font-size:42px;color:var(--gold)}.start-lead{line-height:1.8}.start-title{font-family:Georgia,'Noto Serif KR',serif}.v3-movie{font-family:Georgia,serif;color:var(--gold)}
 @media(min-width:700px){.v3-opening video{max-width:1100px}.v3-grid{gap:14px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
@@ -173,23 +184,56 @@ function chooseGender(g){const input=el('realGender');if(input)input.value=g;for
 async function assign(){
  const name=(el('realName')?.value||'').trim().replace(/\s+/g,' ').slice(0,24),gender=el('realGender')?.value||'';
  if(!name)return alert('참가자 이름을 입력하세요.');if(!gender)return alert('성별을 선택하세요.');
- if(SYNC.on){state.name=name;state.gender=gender;state.pendingReg=true;persist();await SYNC.db.set(SYNC.R('regs/'+device),{name,gender,at:Date.now()});render();return;}
+ if(SYNC.on){if(!requireSync2042())return;state.name=name;state.gender=gender;state.pendingReg=true;persist();render();try{await SYNC.db.set(SYNC.R('regs/'+device),{name,gender,at:Date.now()});}catch(e){state.pendingReg=false;persist();render();if(el('realName'))el('realName').value=name;chooseGender(gender);reportSyncError2042(e);}return;}
  const free=ACTIVE_ROLE_INDICES.filter(i=>!localCast[i]);if(!free.length)return alert('네 배역이 모두 배정되어 있습니다. 관리자에게 문의하세요.');
  completeAssignment(free[Math.floor(Math.random()*free.length)],name,gender);
 }
 function completeAssignment(i,name,gender){if(!roleActive(i))return false;state.role=i;state.name=name;state.gender=gender;state.pendingReg=false;state.remoteAssigned=SYNC.on;state.votes=[];state.ballotSubmitted=false;selectedPerson=-1;view='home';if(!SYNC.on){localCast[i]={name,gender,device,at:Date.now()};storeJSON(NS+'cast',localCast);}rerender();return true;}
 function assignSpecific(i){if(!adminAuthenticated||!roleActive(i))return;completeAssignment(i,el('previewName')?.value.trim()||'테스트 참가자','미지정');}
-async function cancelReg(){if(SYNC.on)await SYNC.db.remove(SYNC.R('regs/'+device));state.pendingReg=false;rerender();}
-async function adminAssignAll(){
+async function cancelReg(){if(!requireSync2042())return false;if(SYNC.on)await SYNC.db.remove(SYNC.R('regs/'+device));state.pendingReg=false;rerender();}
+async function adminAssignAll(){if(!requireSync2042())return false;
  if(!adminAuthenticated)return false;if(!SYNC.on)return toastTop('오프라인에서는 아래 배역 지정 시연을 사용하세요.');
  const regs=Object.entries(SYNC.data.regs||{}).sort((a,b)=>(a[1].at||0)-(b[1].at||0));if(!regs.length)return toastTop('대기 중인 참가자가 없습니다.');
  const result=await SYNC.db.txn(SYNC.R('cast'),cur=>{const cast=cur||{},already=new Set(Object.values(cast).map(v=>v.device));let free=ACTIVE_ROLE_INDICES.filter(i=>!cast[i]);const pool=regs.filter(([dev])=>!already.has(dev));while(pool.length&&free.length){const [dev,reg]=pool.shift(),at=Math.floor(Math.random()*free.length),i=free.splice(at,1)[0];cast[i]={name:reg.name,gender:reg.gender,device:dev,at:Date.now()};}return cast;});
  if(!result.committed)return toastTop('배역 배정을 다시 시도해 주세요.');SYNC.data.cast=result.value||{};toastTop('등록된 참가자에게 중복 없이 역할을 배정했습니다.');render();return true;
 }
 function openAdmin(){view='admin';render();}
-async function sha256(s){const d=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(d)].map(v=>v.toString(16).padStart(2,'0')).join('');}
-async function adminLogin(){if(await sha256(el('adminPassword')?.value||'')!==ADMIN_HASH)return alert('관리자 비밀번호가 일치하지 않습니다.');adminAuthenticated=true;await becomeDirector();view='admin';render();}
-async function becomeDirector(){state.role=DIRECTOR;state.name='문서윤';state.pendingReg=false;state.inventory=[];state.votes=[];persist();if(SYNC.on){await SYNC.db.remove(SYNC.R('regs/'+device));await SYNC.db.set(SYNC.R('cast/'+DIRECTOR),{name:'문서윤',gender:'',device,at:Date.now()});}return true;}
+// BUTTON_FLOW_FIX_2042_V1: local controls must remain usable while the network is unavailable.
+let adminLoginPending2042=false,lastSyncError2042='';
+function portableSha2562042(value){
+ const bytes=typeof TextEncoder!=='undefined'?new TextEncoder().encode(String(value)):Uint8Array.from(unescape(encodeURIComponent(String(value))),c=>c.charCodeAt(0));
+ const n=bytes.length,size=Math.ceil((n+9)/64)*64,data=new Uint8Array(size);data.set(bytes);data[n]=0x80;
+ const dv=new DataView(data.buffer);dv.setUint32(size-8,Math.floor(n/0x20000000));dv.setUint32(size-4,(n*8)>>>0);
+ const K=[0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+ const H=[0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19],W=new Uint32Array(64),rotr=(x,n)=>(x>>>n)|(x<<(32-n));
+ for(let off=0;off<size;off+=64){for(let i=0;i<16;i++)W[i]=dv.getUint32(off+i*4);for(let i=16;i<64;i++){const a=W[i-15],b=W[i-2],s0=rotr(a,7)^rotr(a,18)^(a>>>3),s1=rotr(b,17)^rotr(b,19)^(b>>>10);W[i]=(W[i-16]+s0+W[i-7]+s1)>>>0;}let[a,b,c,d,e,f,g,h]=H;
+  for(let i=0;i<64;i++){const s1=rotr(e,6)^rotr(e,11)^rotr(e,25),ch=(e&f)^((~e)&g),t1=(h+s1+ch+K[i]+W[i])>>>0,s0=rotr(a,2)^rotr(a,13)^rotr(a,22),maj=(a&b)^(a&c)^(b&c),t2=(s0+maj)>>>0;h=g;g=f;f=e;e=(d+t1)>>>0;d=c;c=b;b=a;a=(t1+t2)>>>0;}
+  const next=[a,b,c,d,e,f,g,h];for(let i=0;i<8;i++)H[i]=(H[i]+next[i])>>>0;
+ }
+ return H.map(x=>x.toString(16).padStart(8,'0')).join('');
+}
+async function sha256(s){try{if(globalThis.crypto?.subtle&&typeof TextEncoder!=='undefined'){const d=await globalThis.crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(d)].map(v=>v.toString(16).padStart(2,'0')).join('');}}catch(e){}return portableSha2562042(s);}
+function reportSyncError2042(error){
+ const code=String(error?.code||error?.message||error||'');const denied=/permission[_ -]?denied/i.test(code);
+ if(denied){SYNC.denied=true;SYNC.connected=false;SYNC.connectionIssue='동기화 권한 없음 · Firebase 규칙을 확인하세요.';}
+ const msg=denied?'Firebase 규칙에서 마지막 상영회 방의 접근 권한을 확인하세요. 관리자 화면과 오프닝은 계속 사용할 수 있습니다.':'서버에 저장하지 못했습니다. 연결 상태를 확인한 뒤 다시 눌러 주세요.';
+ if(lastSyncError2042!==msg){lastSyncError2042=msg;toastTop(msg);softRender();}
+}
+function requireSync2042(){if(SYNC.on&&SYNC.denied){toastTop('마지막 상영회 방의 Firebase 접근 권한이 없어 저장할 수 없습니다. 배포 안내의 규칙을 적용한 뒤 새로고침해 주세요.');return false;}return true;}
+async function adminLogin(){
+ if(adminLoginPending2042)return false;adminLoginPending2042=true;
+ try{if(await sha256(el('adminPassword')?.value||'')!==ADMIN_HASH){alert('관리자 비밀번호가 일치하지 않습니다.');return false;}
+  adminAuthenticated=true;becomeDirector();view='admin';render();return true;
+ }catch(e){toastTop('관리자 입장 처리 중 오류가 발생했습니다. 다시 눌러 주세요.');return false;}finally{adminLoginPending2042=false;}
+}
+function becomeDirector(){
+ state.role=DIRECTOR;state.name='문서윤';state.pendingReg=false;state.inventory=[];state.votes=[];persist();
+ if(SYNC.on&&SYNC.db&&!SYNC.denied){const info={name:'문서윤',gender:'',device,at:Date.now()};
+  // Sync in the background; local authentication must never await a disconnected server.
+  Promise.resolve().then(()=>SYNC.db.update?SYNC.db.update(SYNC.R(''),{['regs/'+device]:null,['cast/'+DIRECTOR]:info}):Promise.resolve(SYNC.db.remove(SYNC.R('regs/'+device))).then(()=>SYNC.db.set(SYNC.R('cast/'+DIRECTOR),info))).catch(reportSyncError2042);
+ }
+ return true;
+}
 function adminLogout(){adminAuthenticated=false;view='home';rerender();}
 function home(){
  if(!role())return startPage();if(selectedPerson>=0)return personContact(selectedPerson);
@@ -216,7 +260,7 @@ function mapPage(){return `<h2>은하극장 탐색</h2>${panel(`<h3>${phaseName(
 function enterAdminMap(){if(!adminAuthenticated)return;return TG_open(true);}
 function worldClaimsV11(){return SYNC.on?Object.fromEntries(Object.values(SYNC.data.claims||{}).filter(Boolean).map(v=>[v.key,v])):localClaims;}
 function claimOwnerV11(key){return worldClaimsV11()[key]||null;}
-async function doWorldClaimV11(key){
+async function doWorldClaimV11(key){if(!requireSync2042())return false;
  if(!roleActive(state.role)||!isExploring()||!key.startsWith('E:'))return false;
  const me={key,owner:state.role,name:liveName(state.role),at:Date.now()},old=claimOwnerV11(key);if(old)return old.owner===state.role;
  if(SYNC.on){try{const result=await SYNC.db.txn(SYNC.R('claims/'+safeKey(key)),cur=>cur&&cur.owner!==state.role?undefined:cur||me);if(!result.committed)return false;SYNC.data.claims=SYNC.data.claims||{};SYNC.data.claims[safeKey(key)]=result.value||me;return true;}catch(e){toastTop('조사 기록을 저장하지 못했습니다. 다시 시도해 주세요.');return false;}}
@@ -231,21 +275,21 @@ function chatPage(){
  const peer=activeConversation,msgs=personalMail().filter(m=>(m.from===state.role&&m.to===peer)||(m.from===peer&&m.to===state.role));
  return `<div class="row between"><h2>${safe(liveName(peer))}</h2>${ui('','목록',"activeConversation=-1;render()",'outline')}</div>${panel(`<div id="chatStream" style="max-height:50dvh;overflow:auto">${msgs.map(m=>`<div class="v3-message ${m.from===state.role?'me':'them'}"><small class="muted">${m.from===state.role?'나':safe(liveName(m.from))}</small><div>${safe(m.body)}</div></div>`).join('')||'<p class="v3-empty">아직 대화가 없습니다.</p>'}</div><textarea class="field" id="chatText" maxlength="1000" placeholder="상대에게만 보낼 메시지" rows="3"></textarea>${ui('','보내기','sendMessage()','primary')}${peer===DIRECTOR&&roleActive(state.role)?ui('','내 증거 제시','showEvidenceToDirector()','outline'):''}`)}`;
 }
-async function sendDM(to,body){if(!role()||!validPeer(to)||to===state.role||!body.trim())return false;const msg={id:Date.now().toString(36)+'-'+Math.random().toString(36).slice(2),kind:'dm',from:state.role,to,body:body.trim().slice(0,1000),at:Date.now()};if(SYNC.on){await SYNC.db.set(SYNC.R('letters/'+safeKey(msg.id)),msg);SYNC.data.letters=SYNC.data.letters||{};SYNC.data.letters[safeKey(msg.id)]=msg;}else{localLetters.push(msg);storeJSON(MSG_DB,localLetters);}render();return true;}
+async function sendDM(to,body){if(!requireSync2042())return false;if(!role()||!validPeer(to)||to===state.role||!body.trim())return false;const msg={id:Date.now().toString(36)+'-'+Math.random().toString(36).slice(2),kind:'dm',from:state.role,to,body:body.trim().slice(0,1000),at:Date.now()};if(SYNC.on){await SYNC.db.set(SYNC.R('letters/'+safeKey(msg.id)),msg);SYNC.data.letters=SYNC.data.letters||{};SYNC.data.letters[safeKey(msg.id)]=msg;}else{localLetters.push(msg);storeJSON(MSG_DB,localLetters);}render();return true;}
 async function sendMessage(){const text=el('chatText')?.value||'';if(!text.trim())return;await sendDM(activeConversation,text);if(el('chatText'))el('chatText').value='';}
 async function showEvidenceToDirector(){const codes=state.inventory.filter(x=>/^C\d{2}$/.test(x));if(!codes.length)return toastTop('제시할 현장 증거카드가 없습니다.');const code=prompt('제시할 증거 ID를 입력하세요.\n'+codes.join(' · '),codes[0]);if(!code||!codes.includes(code.toUpperCase()))return;const c=TG_DATA.clues.find(c=>c.id===code.toUpperCase());await sendDM(DIRECTOR,'[현장 자료 제시] '+c.id+' '+c.title);}
 function currentVoteState(){return SYNC.data.voteState||state.voteState||{round:0,candidates:[]};}
 function currentBallots(){const data=SYNC.on?(SYNC.data.ballots||{}):(state.ballots||{});return Object.fromEntries(Object.entries(data).filter(([i,b])=>roleActive(+i)&&b&&b.submitted===true&&Number(b.round||0)===Number(currentVoteState().round||0)));}
 function toggleVote(i){if(!roleActive(state.role)||!roleActive(i)||state.stage!=='vote'||state.ballotSubmitted)return false;const vs=currentVoteState();if(vs.round===1&&!vs.candidates.includes(i))return false;state.votes=state.votes.includes(i)?[]:[i];state.count=1;rerender();return true;}
 function chooseCount(){state.count=1;}
-async function submitBallot(){if(!roleActive(state.role)||state.stage!=='vote'||state.ballotSubmitted)return false;if(state.votes.length!==1)return toastTop('한 명을 선택해 주세요.');const vs=currentVoteState(),i=state.votes[0];if(vs.round===1&&!vs.candidates.includes(i))return false;const b={count:1,votes:[i],round:Number(vs.round||0),submitted:true,at:Date.now()};if(SYNC.on){await SYNC.db.set(SYNC.R('ballots/'+state.role),b);SYNC.data.ballots=SYNC.data.ballots||{};SYNC.data.ballots[state.role]=b;}else{state.ballots=state.ballots||{};state.ballots[state.role]=b;}state.ballotSubmitted=true;rerender();return true;}
+async function submitBallot(){if(!requireSync2042())return false;if(!roleActive(state.role)||state.stage!=='vote'||state.ballotSubmitted)return false;if(state.votes.length!==1)return toastTop('한 명을 선택해 주세요.');const vs=currentVoteState(),i=state.votes[0];if(vs.round===1&&!vs.candidates.includes(i))return false;const b={count:1,votes:[i],round:Number(vs.round||0),submitted:true,at:Date.now()};if(SYNC.on){await SYNC.db.set(SYNC.R('ballots/'+state.role),b);SYNC.data.ballots=SYNC.data.ballots||{};SYNC.data.ballots[state.role]=b;}else{state.ballots=state.ballots||{};state.ballots[state.role]=b;}state.ballotSubmitted=true;rerender();return true;}
 function mainVotePanel(){const vs=currentVoteState();return `<h3>${vs.round===1?'결선 투표':'최종 범인 투표'}</h3><p>범인이라고 생각하는 <b>한 명</b>을 선택하고 제출합니다. ${vs.round===1?'첫 투표에서 동률이었던 후보만 선택할 수 있습니다. 이번에도 동률이면 최종 지목 실패로 처리합니다.':'최다 득표자가 동률이면 결선 투표를 한 번 진행합니다.'}</p><p>${state.ballotSubmitted?'제출 완료 · 투표 결과는 엔딩에서 공개됩니다.':'선택한 후보: '+(state.votes.length?safe(liveName(state.votes[0])):'없음')}</p>`;}
 function votePage(){if(!roleActive(state.role))return panel('관리자는 투표에 참여하지 않습니다.');if(state.stage!=='vote')return panel('최종 투표는 아직 열리지 않았습니다.');const vs=currentVoteState(),choices=vs.round===1?vs.candidates:ACTIVE_ROLE_INDICES;return `<h2>${vs.round===1?'결선 투표':'최종 투표'}</h2>${panel(mainVotePanel())}${panel(`<div class="cast-list">${choices.map(i=>`<button class="cast-card ${state.votes.includes(i)?'selected':''}" ${state.ballotSubmitted?'disabled':''} onclick="toggleVote(${i})">${portrait(i)}<span class="cast-identity"><b>${safe(liveName(i))}</b><small>${safe(DATA.people[i].job)}</small></span><span>${state.votes.includes(i)?'◉':'○'}</span></button>`).join('')}</div><p>${ui('',state.ballotSubmitted?'투표 제출 완료':'선택한 한 명에게 투표','submitBallot()','primary')}</p>` )}`;}
 function aggregateBallots(ballots=currentBallots()){const tally={};for(const b of Object.values(ballots)){const votes=(b.votes||[]).filter(roleActive);if(votes.length===1)tally[votes[0]]=(tally[votes[0]]||0)+1;}const ranked=Object.entries(tally).sort((a,b)=>b[1]-a[1]).map(([i,n])=>({i:+i,n})),top=ranked[0]?.n||0,tied=ranked.filter(r=>r.n===top).map(r=>r.i);return {count:1,tally,voters:Object.keys(ballots).length,votes:tied.length===1?tied:[],tied:tied.length>1?tied:[],ballots:clone(ballots),at:Date.now()};}
 function currentResolution(){if(SYNC.final?.caseResolution)return clone(SYNC.final.caseResolution);return clone(SYNC.data.caseResolution||state.caseResolution||{moneyTruth:false,goalChecks:{}});}
 function LS_getCaseResolution(){return currentResolution();}
 function LS_snapshotCaseResolution(){return currentResolution();}
-async function setCaseResolution(next){if(!adminAuthenticated||state.stage==='finished'||SYNC.final||state.final||pendingResolution)return false;pendingResolution=true;next.updatedAt=Date.now();try{if(SYNC.on){await SYNC.db.set(SYNC.R('caseResolution'),next);SYNC.data.caseResolution=clone(next);}state.caseResolution=clone(next);persist();return true;}finally{pendingResolution=false;render();}}
+async function setCaseResolution(next){if(!requireSync2042())return false;if(!adminAuthenticated||state.stage==='finished'||SYNC.final||state.final||pendingResolution)return false;pendingResolution=true;next.updatedAt=Date.now();try{if(SYNC.on){await SYNC.db.set(SYNC.R('caseResolution'),next);SYNC.data.caseResolution=clone(next);}state.caseResolution=clone(next);persist();return true;}finally{pendingResolution=false;render();}}
 function LS_setMoneyTruth(checked){const r=currentResolution();r.moneyTruth=!!checked;return setCaseResolution(r);}
 function LS_setGoalCheck(i,key,checked){i=Number(i);if(!roleActive(i))return Promise.resolve(false);const r=currentResolution();r.goalChecks=r.goalChecks||{};r.goalChecks[i]=r.goalChecks[i]||{};r.goalChecks[i][key]=!!checked;return setCaseResolution(r);}
 function endingKey(votes,resolution=currentResolution()){const v=(votes||[]).filter(roleActive);if(v.length!==1)return 'D';if(v[0]!==KILLER)return 'C';return resolution.moneyTruth?'A':'B';}
@@ -262,7 +306,7 @@ async function beginRunoff(first){
  const voteState={round:1,candidates:first.tied,firstBallots:first.ballots,firstTally:first.tally,rev:Date.now()};state.voteState=voteState;state.votes=[];state.ballotSubmitted=false;state.ballots={};
  if(SYNC.on){await SYNC.db.set(SYNC.R('voteState'),voteState);await SYNC.db.set(SYNC.R('ballots'),{});SYNC.data.voteState=voteState;SYNC.data.ballots={};}await startPhase('vote',{preserveBallots:true});toastTop('동률입니다. 해당 후보에 대한 결선 투표를 한 번 진행합니다.');return {runoff:true,candidates:first.tied};
 }
-async function finalize(){
+async function finalize(){if(!requireSync2042())return false;
  if(!adminAuthenticated)return false;if(pendingResolution)return toastTop('목표 판정 저장이 끝날 때까지 기다려 주세요.');const f=aggregateBallots();if(f.voters<4&&!confirm(`현재 ${f.voters}/4명 투표했습니다. 이 상태로 집계할까요?`))return false;
  const vs=currentVoteState();if(f.tied.length&&Number(vs.round||0)===0)return beginRunoff(f);
  f.round=Number(vs.round||0);f.reason=f.tied.length?'tie':f.votes.length?'selected':'no_ballots';f.caseResolution=currentResolution();f.firstBallots=vs.firstBallots||null;f.ending=endingKey(f.votes,f.caseResolution);
@@ -273,7 +317,7 @@ function bookPage(){
  if(state.stage!=='finished')return panel('게임 종료 후 전체 기록이 공개됩니다.');const f=SYNC.final||state.final||{},r=result(),end=TG_DATA.endings.endings[r.key];
  return `<h2>사건의 마지막 기록</h2>${panel(`<small class="gold">ENDING ${r.key}</small><h2 class="v3-end-title">${safe(end.title)}</h2><p class="v3-brief">${safe(end.condition)}</p>${end.body.map(t=>'<p class="storyp">'+safe(t)+'</p>').join('')}`)}${panel(`<h3>전체 투표</h3><p>${f.round===1?'결선 투표':'최종 투표'} · ${f.voters||0}명 제출 · ${f.votes?.length?'최종 지목: '+safe(liveName(f.votes[0])):'최종 지목 실패'}</p>${Object.entries(f.tally||{}).map(([i,n])=>`<p>${safe(liveName(+i))} · ${n}표</p>`).join('')}`)}${panel('<h3>개인 점수</h3>'+scoreTable())}${panel(`<h3>사건의 전말</h3>${TG_DATA.endings.explain.map(t=>'<p class="storyp">'+safe(t)+'</p>').join('')}<h3>실제 시간표</h3>${DATA.timeline.map(t=>`<div class="entry"><b class="gold">${safe(t.time)}</b> · ${safe(t.location)}<p>${safe(t.people)} — ${safe(t.action)}</p></div>`).join('')}`)}${panel(`<h3>다른 엔딩</h3>${Object.entries(TG_DATA.endings.endings).filter(([k])=>k!==r.key).map(([k,e])=>`<details class="entry"><summary>ENDING ${k} · ${safe(e.title)}</summary><p class="v3-brief">${safe(e.condition)}</p>${e.body.map(t=>'<p>'+safe(t)+'</p>').join('')}</details>`).join('')}`)}${panel(`<h3>증거 전체 해설</h3>${TG_DATA.clues.filter(c=>c.kind!=='bag').map(c=>`<details class="entry"><summary>${c.id} · ${safe(c.title)}</summary><p>${safe(c.text)}</p><p class="v3-brief">해설: ${safe(c.gm)}</p></details>`).join('')}`)}`;
 }
-async function startPhase(next,options={}){
+async function startPhase(next,options={}){if(!requireSync2042())return false;
  if(!adminAuthenticated||!STAGES.some(s=>s[0]===next))return false;if(next==='finished')return finalize();
  if(window.TG_isOpen?.())TG_close();closeOpening();
  if(next==='vote'&&!options.preserveBallots){state.voteState={round:0,candidates:[],rev:Date.now()};state.ballots={};state.votes=[];state.ballotSubmitted=false;if(SYNC.on){await SYNC.db.set(SYNC.R('voteState'),state.voteState);await SYNC.db.set(SYNC.R('ballots'),{});SYNC.data.voteState=state.voteState;SYNC.data.ballots={};}}
@@ -281,7 +325,7 @@ async function startPhase(next,options={}){
  state.stage=next;state.timerEnd=DUR[next]?SYNC.now()+DUR[next]*60000:0;view='home';selectedPerson=-1;persist();if(SYNC.on)await pushStage(next,state.timerEnd);render();if(next==='intro')openOpening();return true;
 }
 function nextStage(){const i=STAGES.findIndex(s=>s[0]===state.stage),next=STAGES[Math.min(STAGES.length-1,i+1)][0];return next==='finished'?finalize():startPhase(next);}
-async function adjustTimer(min){if(!adminAuthenticated)return;state.timerEnd=min===0?SYNC.now():Math.max(SYNC.now(),(state.timerEnd||SYNC.now())+min*60000);persist();if(SYNC.on)await pushStage(state.stage,state.timerEnd);render();}
+async function adjustTimer(min){if(!requireSync2042())return false;if(!adminAuthenticated)return;state.timerEnd=min===0?SYNC.now():Math.max(SYNC.now(),(state.timerEnd||SYNC.now())+min*60000);persist();if(SYNC.on)await pushStage(state.stage,state.timerEnd);render();}
 function adjudicationPanel(){
  const r=currentResolution(),locked=state.stage==='finished';return panel(`<h3>사실 확인과 개인 목표</h3><label class="v3-check"><input type="checkbox" ${r.moneyTruth?'checked':''} ${locked?'disabled':''} onchange="LS_setMoneyTruth(this.checked)"><span><b>계약금 이상 규명</b><br><small class="muted">C08 계약 계좌 조건·C15 실제 수취 계좌·C17 보류 공지를 연결해 금전 문제를 공개적으로 설명했는지 확인합니다. 수집만으로 자동 달성되지 않습니다.</small></span></label>${activePeopleMap((p,i)=>`<details class="entry"><summary>${safe(p.name)} · 목표 판정</summary>${i===KILLER?[['concealment','정산자료 은닉이 적발되지 않음',2],['alibi','개인 알리바이를 방어함',1]].map(([k,l,pts])=>`<label class="v3-check"><input type="checkbox" ${goalOK(r,i,k)?'checked':''} ${locked?'disabled':''} onchange="LS_setGoalCheck(${i},'${k}',this.checked)"><span>${safe(l)} +${pts}</span></label>`).join(''):`<p class="v3-brief">목표1 ‘진범 정확 지목’ 1점은 최종 개인 투표로 자동 판정합니다.</p>${[['goal2',p.goals[1]],['goal3',p.goals[2]]].map(([k,l])=>`<label class="v3-check"><input type="checkbox" ${goalOK(r,i,k)?'checked':''} ${locked?'disabled':''} onchange="LS_setGoalCheck(${i},'${k}',this.checked)"><span>${safe(l)} +1</span></label>`).join('')}`}</details>`).join('')}<p class="v3-brief">공개된 자료와 실제 진술을 근거로 체크합니다. 엔딩 공개 후 판정은 고정됩니다.</p>`);
 }
@@ -294,23 +338,51 @@ function fillNotice(k){if(!adminAuthenticated)return;el('noticeText').value=DATA
 function directorToolsPanel(){const marks=(SYNC.on?SYNC.data.director:state.director)?.interviews||{};return panel(`<h3>인터뷰 기록 · 개인 힌트</h3><p class="v3-brief">확인한 진술을 기록하고 요청한 참가자에게만 힌트를 보냅니다. 인터뷰 기록은 엔딩 분기를 바꾸지 않습니다.</p>${activePeopleMap((p,i)=>`<div class="entry"><label><input type="checkbox" ${marks[i]?'checked':''} onchange="toggleInterview(${i})"> ${safe(liveName(i))} 인터뷰 완료</label><div class="row" style="margin-top:8px">${['A','B','C','D'].map((k,n)=>ui('',String(n+1)+'단계 힌트',`sendHintTo(${i},'${k}')`,'outline')).join('')}</div>${SYNC.on&&currentCast()[i]?ui('','배정 해제',`adminUnassign(${i})`,'outline'):''}</div>`).join('')}`);}
 const coreAdminPage2042=adminPage;
 adminPage=function(){const h=coreAdminPage2042();return adminAuthenticated?h+directorToolsPanel():h;};
-async function toggleInterview(i){if(!adminAuthenticated||!roleActive(i))return;const director=(SYNC.on?SYNC.data.director:state.director)||{interviews:{}};director.interviews=director.interviews||{};const has=!!director.interviews[i];if(SYNC.on)await SYNC.db.set(SYNC.R('director/interviews/'+i),has?null:Date.now());else{if(has)delete director.interviews[i];else director.interviews[i]=Date.now();state.director=director;persist();render();}}
+async function toggleInterview(i){if(!requireSync2042())return false;if(!adminAuthenticated||!roleActive(i))return;const director=(SYNC.on?SYNC.data.director:state.director)||{interviews:{}};director.interviews=director.interviews||{};const has=!!director.interviews[i];if(SYNC.on)await SYNC.db.set(SYNC.R('director/interviews/'+i),has?null:Date.now());else{if(has)delete director.interviews[i];else director.interviews[i]=Date.now();state.director=director;persist();render();}}
 async function sendHintTo(i,k){if(!adminAuthenticated||!roleActive(i)||!['A','B','C','D'].includes(k))return;const text=DATA.people[DIRECTOR].hints[k].script;if(!confirm(liveName(i)+'에게 다음 힌트를 보낼까요?\n\n'+text))return;await sendDM(i,'[진행자 힌트] '+text);toastTop('요청한 참가자에게 힌트를 보냈습니다.');}
-async function adminUnassign(i){if(!adminAuthenticated||!SYNC.on||!roleActive(i))return;if(!confirm(liveName(i)+'의 기기 배정을 해제할까요? 이 배역의 증거·투표 기록은 유지됩니다.'))return;await SYNC.db.remove(SYNC.R('cast/'+i));}
-async function sendNotice(){if(!adminAuthenticated)return;const text=el('noticeText')?.value.trim();if(!text)return;const msg={text,at:Date.now(),from:'관리인 문서윤'};if(SYNC.on)await SYNC.db.set(SYNC.R('notice'),msg);showNotice(msg);}
+async function adminUnassign(i){if(!requireSync2042())return false;if(!adminAuthenticated||!SYNC.on||!roleActive(i))return;if(!confirm(liveName(i)+'의 기기 배정을 해제할까요? 이 배역의 증거·투표 기록은 유지됩니다.'))return;await SYNC.db.remove(SYNC.R('cast/'+i));}
+async function sendNotice(){if(!requireSync2042())return false;if(!adminAuthenticated)return;const text=el('noticeText')?.value.trim();if(!text)return;const msg={text,at:Date.now(),from:'관리인 문서윤'};if(SYNC.on)await SYNC.db.set(SYNC.R('notice'),msg);showNotice(msg);}
 function showNotice(n){let host=el('caseNotice');if(host)host.remove();host=document.createElement('div');host.id='caseNotice';host.className='v3-notice';host.innerHTML=`<div role="dialog" aria-modal="true" aria-label="관리자 공지"><small class="gold">${safe(n.from||'관리인 문서윤')}</small><p class="v3-line">${safe(n.text)}</p>${ui('','확인',"document.getElementById('caseNotice').remove()",'primary')}</div>`;document.body.appendChild(host);}
 function openMemo(){if(!role())return;let host=el('caseMemo');if(host)return;host=document.createElement('div');host.id='caseMemo';host.className='v3-notice';host.innerHTML=`<div role="dialog" aria-modal="true" aria-label="내 사건 메모"><h3>내 사건 메모</h3><textarea class="field area" id="caseMemoText" rows="11" placeholder="시각·증거·질문을 자유롭게 적으세요.">${safe(state.notes)}</textarea><p>${ui('','저장하고 닫기','saveMemo()','primary')}</p></div>`;document.body.appendChild(host);}
 function saveMemo(){state.notes=el('caseMemoText')?.value||'';persist();el('caseMemo')?.remove();toastTop('메모를 저장했습니다.');}
+function openingSoundOn2042(){try{return localStorage.getItem(NS+'sound')!=='off';}catch(e){return true;}}
+function syncOpeningSound2042(){const v=el('openingVideo2042'),b=el('openingSound2042'),on=openingSoundOn2042();if(v)v.muted=!on;if(b){b.textContent=on?'소리 켜짐':'소리 꺼짐';b.setAttribute('aria-pressed',String(on));}}
+function toggleOpeningSound2042(){try{localStorage.setItem(NS+'sound',openingSoundOn2042()?'off':'on');}catch(e){}syncOpeningSound2042();if(openingSoundOn2042())playOpening2042();}
+function openingPrompt2042(show,text){const p=el('openingPlay2042');if(p){p.hidden=!show;if(text)p.textContent=text;}}
 function openOpening(){
- if(el('opening2042'))return;const host=document.createElement('div');host.id='opening2042';host.className='v3-opening';host.innerHTML=`<div style="padding:12px;text-align:center"><small class="gold">EUNHA THEATRE · 2026.11.14</small><div>마지막 상영회: 20시42분</div></div><video id="openingVideo2042" playsinline controls preload="metadata" poster="assets/opening/last_screening_opening_poster.jpg" aria-label="마지막 상영회 오프닝 영상"><source src="assets/opening/last_screening_opening.mp4" type="video/mp4"><track kind="subtitles" src="assets/opening/last_screening_opening.vtt" srclang="ko" label="한국어 자막"></video><div class="v3-opening-fallback" id="openingFallback2042" hidden><p>독립영화 「잔상」의 시사회를 앞둔 은하극장. 20시42분, 제작대표 최도경의 목소리가 스피커에서 흘러나옵니다.</p><p>그러나20시51분, 그는 관리사무실에서 쓰러진 채 발견됩니다. 그날 이곳에서 무엇이 있었을까요?</p></div><div class="v3-opening-bar">${ui('','영상 재생','playOpening2042()','primary')}${ui('','건너뛰기 · 게임으로','closeOpening()','outline')}</div>`;document.body.appendChild(host);
- const video=el('openingVideo2042');if(video){const disableDuplicateCaptions=()=>{for(const t of Array.from(video.textTracks||[]))t.mode='disabled';};disableDuplicateCaptions();video.onloadedmetadata=disableDuplicateCaptions;video.onended=()=>{const h=el('openingFallback2042');if(h){h.hidden=false;h.innerHTML='<p>오프닝이 끝났습니다. 진행자가1차 수색을 시작하면 지도를 탐색합니다.</p>';}};video.onerror=()=>{if(el('openingFallback2042'))el('openingFallback2042').hidden=false;};try{const p=video.play();if(p?.catch)p.catch(()=>{});}catch(e){}}
+ if(el('opening2042'))return;const host=document.createElement('div');host.id='opening2042';host.className='v3-opening v23-intro v25-film';host.setAttribute('role','dialog');host.setAttribute('aria-modal','true');host.setAttribute('aria-label','마지막 상영회 오프닝');
+ host.innerHTML=`<div class="v25-frame"><video id="openingVideo2042" class="v25-opening-video" playsinline webkit-playsinline preload="metadata" poster="assets/opening/last_screening_opening_poster.jpg" aria-label="마지막 상영회 오프닝 영상"><source src="assets/opening/last_screening_opening.mp4" type="video/mp4"><track kind="subtitles" src="assets/opening/last_screening_opening.vtt" srclang="ko" label="한국어 자막"></video><button type="button" id="openingPlay2042" class="v25-play-prompt" onclick="playOpening2042()">눌러서 오프닝 재생</button><div class="v25-video-error" id="openingFallback2042" hidden><p>독립영화 「잔상」의 시사회를 앞둔 은하극장. 20시42분, 제작대표 최도경의 목소리가 스피커에서 흘러나옵니다.</p><p>그러나20시51분, 그는 관리사무실에서 쓰러진 채 발견됩니다. 그날 이곳에서 무엇이 있었을까요?</p></div></div><div class="v23-intro-bar"><button type="button" onclick="toggleOpeningSound2042()" id="openingSound2042" aria-pressed="true">소리 켜짐</button><button type="button" onclick="closeOpening()">닫기</button></div>`;
+ document.body.appendChild(host);const video=el('openingVideo2042');if(video){
+  const noDuplicateCaptions=()=>{for(const t of Array.from(video.textTracks||[]))t.mode='disabled';};noDuplicateCaptions();video.onloadedmetadata=noDuplicateCaptions;
+  video.onplaying=()=>{if(!host._needsSoundTap)openingPrompt2042(false);};
+  video.onpause=()=>{if(!host._disposed&&!video.ended)openingPrompt2042(true,'눌러서 오프닝 재생');};
+  video.onended=()=>{openingPrompt2042(true,'오프닝 다시 재생');};
+  video.onerror=()=>{if(host._disposed)return;host.classList.add('video-unavailable');openingPrompt2042(false);const h=el('openingFallback2042');if(h)h.hidden=false;toastTop('영상 파일을 불러오지 못했습니다. ZIP 전체를 풀어 assets 폴더와 함께 열어 주세요.');};
+  video.onclick=()=>{if(video.paused)playOpening2042();};syncOpeningSound2042();playOpening2042();
+ }
 }
-function playOpening2042(){const v=el('openingVideo2042');if(v?.play){const p=v.play();p?.catch?.(()=>toastTop('화면의 영상 재생 버튼을 눌러 주세요.'));}}
-function closeOpening(){const h=el('opening2042');if(!h)return;try{el('openingVideo2042')?.pause();}catch(e){}h.remove();}
+function playOpening2042(){
+ const v=el('openingVideo2042'),host=el('opening2042');if(!v?.play||!host)return;
+ host._needsSoundTap=false;syncOpeningSound2042();if(v.ended)try{v.currentTime=0;}catch(e){}
+ try{const p=v.play();if(p?.then)p.then(()=>{if(!host._disposed)openingPrompt2042(false);}).catch(async e=>{
+  if(host._disposed||e?.name==='AbortError')return;
+  if(e?.name==='NotAllowedError'&&openingSoundOn2042()){v.muted=true;try{await v.play();if(host._disposed)return;host._needsSoundTap=true;openingPrompt2042(true,'눌러서 소리 켜기');return;}catch(ignored){}}
+  if(v.error){const h=el('openingFallback2042');if(h)h.hidden=false;openingPrompt2042(false);}else openingPrompt2042(true,'눌러서 오프닝 재생');
+ });else openingPrompt2042(false);}catch(e){openingPrompt2042(true,'눌러서 오프닝 재생');}
+}
+function closeOpening(){const h=el('opening2042');if(!h)return;h._disposed=true;try{const v=el('openingVideo2042');v?.pause();}catch(e){}h.remove();}
 function installHelp(){alert('Android Chrome: 브라우저 메뉴 → 앱 설치 또는 홈 화면에 추가\niPhone Safari: 공유 → 홈 화면에 추가\nHTTPS 게시 주소에서 사용할 수 있습니다.');}
 function safeKey(k){return String(k).replace(/[.#$\[\]\/]/g,'_');}
 function typingNow(){const a=document.activeElement;return a&&['INPUT','TEXTAREA','SELECT'].includes(a.tagName);}
-function softRender(){if(typingNow()||window.TG_isOpen?.()){pendingRender=true;return;}pendingRender=false;render();}
+let lastPointerDown2042=0;
+function softRender(){
+ if(typingNow()||window.TG_isOpen?.()||Date.now()-lastPointerDown2042<350){pendingRender=true;return;}
+ const ids=['realName','realGender','adminPassword','noticeText','previewName','previewRole','chatInput','chatText','caseMemoText','personNote'],draft={};
+ for(const id of ids){const node=el(id);if(node)draft[id]={value:node.value,scrollTop:node.scrollTop};}
+ const before=view;pendingRender=false;render();if(view!==before)return;
+ for(const[id,d]of Object.entries(draft)){const node=el(id);if(node){node.value=d.value;node.scrollTop=d.scrollTop||0;}}
+ if(draft.realGender)chooseGender(draft.realGender.value);
+}
 let pendingRender=false,lastStageRev='',lastVoteRev='',lastNoticeAt=0,watchedDb=null,positionWatched=null,positions={};
 function applyRoom(room){
  room=room||{};SYNC.data=room;const reset=Number(room.resetAt)||0,seen=localStorage.getItem(NS+'reset');if(seen===null){try{localStorage.setItem(NS+'reset',String(reset));}catch(e){}}else if(reset>Number(seen)){wipeLocal(reset);return;}
@@ -330,25 +402,26 @@ function applyRoom(room){
  persist();softRender();
 }
 function watchRoom(){
- if(watchedDb===SYNC.db)return;watchedDb=SYNC.db;const keys=['cast','claims','letters','ballots','voteState','caseResolution','stage','final','resetAt','presence','regs','notice','director'],cache={},loaded=new Set();let queued=false;
+ if(watchedDb===SYNC.db)return;watchedDb=SYNC.db;const keys=['cast','claims','letters','ballots','voteState','caseResolution','stage','final','resetAt','regs','notice','director'],cache={},loaded=new Set();let queued=false;
+ SYNC.db.watch(SYNC.R('presence'),value=>{cache.presence=value||{};SYNC.data.presence=cache.presence;});
  for(const k of keys)SYNC.db.watch(SYNC.R(k),value=>{if(value==null)delete cache[k];else cache[k]=value;loaded.add(k);if(loaded.size<keys.length||queued)return;queued=true;setTimeout(()=>{queued=false;applyRoom(clone(cache));},0);});
- if(SYNC.db.connected)SYNC.db.connected(c=>{SYNC.connected=c;softRender();});if(SYNC.db.offset)SYNC.db.offset(v=>SYNC.skew=v);
+ if(SYNC.db.connected)SYNC.db.connected(c=>{SYNC.connected=c&&!SYNC.denied;softRender();});if(SYNC.db.offset)SYNC.db.offset(v=>SYNC.skew=v);
 }
-function SYNC_useAdapter(adapter){SYNC.db=adapter;SYNC.on=true;SYNC.connected=true;watchRoom();updatePresence();}
+function SYNC_useAdapter(adapter){SYNC.db=adapter;SYNC.on=true;SYNC.connected=true;SYNC.denied=false;SYNC.connectionIssue='';lastSyncError2042='';watchRoom();updatePresence();}
 window.SYNC_useAdapter=SYNC_useAdapter;
 async function pushStage(stage,timerEnd){const v={stage,timerEnd:timerEnd||0,rev:Date.now()+'-'+Math.random().toString(36).slice(2),at:Date.now()};if(SYNC.on)await SYNC.db.set(SYNC.R('stage'),v);}
-function updatePresence(){if(!SYNC.on||!SYNC.db)return;const v={role:state.role,name:state.name,admin:adminAuthenticated,at:Date.now()};const fn=SYNC.db.presence||SYNC.db.set;fn.call(SYNC.db,SYNC.R('presence/'+device),v).catch(()=>{});}
+function updatePresence(){if(!SYNC.on||!SYNC.db||SYNC.denied)return;const v={role:state.role,name:state.name,admin:adminAuthenticated,at:Date.now()};const fn=SYNC.db.presence||SYNC.db.set;Promise.resolve().then(()=>fn.call(SYNC.db,SYNC.R('presence/'+device),v)).catch(reportSyncError2042);}
 function wipeLocal(resetAt){for(let i=localStorage.length-1;i>=0;i--){const k=localStorage.key(i);if(k&&k.startsWith(NS)&&![NS+'device',NS+'reset'].includes(k))localStorage.removeItem(k);}if(resetAt)try{localStorage.setItem(NS+'reset',String(resetAt));}catch(e){}state=clone(defaultState);localCast={};localClaims={};localLetters=[];SYNC.final=null;adminAuthenticated=false;view='home';persist();location.reload();}
-async function syncResetGame(){if(!adminAuthenticated||!SYNC.on)return false;if(!confirm('마지막 상영회:20시42분 방의 등록·배정·증거·쪽지·투표를 초기화할까요?'))return false;const at=Date.now();await SYNC.db.set(SYNC.R(''),{resetAt:at});wipeLocal(at);return true;}
+async function syncResetGame(){if(!requireSync2042())return false;if(!adminAuthenticated||!SYNC.on)return false;if(!confirm('마지막 상영회:20시42분 방의 등록·배정·증거·쪽지·투표를 초기화할까요?'))return false;const at=Date.now();await SYNC.db.set(SYNC.R(''),{resetAt:at});wipeLocal(at);return true;}
 function resetDemo(){if(!adminAuthenticated)return;if(SYNC.on)return syncResetGame();if(confirm('이 기기의 마지막 상영회:20시42분 시연 기록을 초기화할까요?'))wipeLocal(0);}
 function loadScript(url){return new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=url;s.onload=resolve;s.onerror=reject;document.head.appendChild(s);});}
 async function connectFirebase(){
  const cfg=window.FIREBASE_CONFIG||{};if(!cfg.databaseURL)return;
- try{const V='10.12.2';await loadScript('https://www.gstatic.com/firebasejs/'+V+'/firebase-app-compat.js');await loadScript('https://www.gstatic.com/firebasejs/'+V+'/firebase-database-compat.js');const app=firebase.initializeApp(cfg,'last-screening-2042'),db=firebase.database(app);SYNC_useAdapter({watch:(p,cb)=>db.ref(p).on('value',s=>cb(s.val())),set:(p,v)=>db.ref(p).set(v),update:(p,v)=>db.ref(p).update(v),remove:p=>db.ref(p).remove(),txn:(p,fn)=>db.ref(p).transaction(fn).then(r=>({committed:r.committed,value:r.snapshot.val()})),connected:cb=>db.ref('.info/connected').on('value',s=>cb(!!s.val())),offset:cb=>db.ref('.info/serverTimeOffset').on('value',s=>cb(Number(s.val())||0)),presence:(p,v)=>{const r=db.ref(p);r.onDisconnect().remove();return r.set(v);}});}catch(e){console.warn('연결 실패',e);toastTop('서버에 연결하지 못했습니다. 현재 기기 시연으로 동작합니다.');}
+ try{const V='10.12.2';await loadScript('https://www.gstatic.com/firebasejs/'+V+'/firebase-app-compat.js');await loadScript('https://www.gstatic.com/firebasejs/'+V+'/firebase-database-compat.js');const app=firebase.initializeApp(cfg,'last-screening-2042'),db=firebase.database(app);SYNC_useAdapter({watch:(p,cb)=>db.ref(p).on('value',s=>cb(s.val()),reportSyncError2042),set:(p,v)=>db.ref(p).set(v),update:(p,v)=>db.ref(p).update(v),remove:p=>db.ref(p).remove(),txn:(p,fn)=>db.ref(p).transaction(fn).then(r=>({committed:r.committed,value:r.snapshot.val()})),connected:cb=>db.ref('.info/connected').on('value',s=>cb(!!s.val())),offset:cb=>db.ref('.info/serverTimeOffset').on('value',s=>cb(Number(s.val())||0)),presence:(p,v)=>{const r=db.ref(p);r.onDisconnect().remove().catch(reportSyncError2042);return r.set(v);}});}catch(e){console.warn('연결 실패',e);toastTop('서버에 연결하지 못했습니다. 현재 기기 시연으로 동작합니다.');}
 }
 let lastPositionPush=0;
-window.TG_onMove=function(S){if(!SYNC.on||Date.now()-lastPositionPush<160)return;lastPositionPush=Date.now();const key=window.TG_ADMIN?'admin':String(state.role);SYNC.db.set(SYNC.R('pos/'+key),{role:state.role,f:S.f,x:S.x,y:S.y,d:S.dir,n:liveName(state.role),at:Date.now()}).catch(()=>{});};
-window.TG_drawOthers=function(g,f,ox,oy,T,SC,time,sprite,roomAt,S){const mine=roomAt(f,S.x,S.y);for(const p of Object.values(positions||{})){if(p.f!==f||p.role===state.role||Date.now()-p.at>20000)continue;const other=roomAt(f,p.x,p.y);if(!window.TG_ADMIN&&!(mine&&other&&mine.id===other.id)&&Math.abs(p.x-S.x)+Math.abs(p.y-S.y)>3)continue;const x=ox+p.x*T,y=oy+(p.y+1)*T-22*SC+SC,spr=sprite(p.role===DIRECTOR?7:p.role+1,p.d||'down',0);g.save();g.globalAlpha=.92;g.drawImage(spr,0,0,spr.width,spr.height,Math.round(x),Math.round(y),16*SC,22*SC);g.font=`bold ${Math.max(10,5*SC)}px sans-serif`;g.textAlign='center';g.strokeStyle='#050810';g.lineWidth=Math.max(2,SC);g.strokeText(p.n||'',x+8*SC,y-SC);g.fillStyle=p.role===DIRECTOR?'#e6c48b':'#f3f4f6';g.fillText(p.n||'',x+8*SC,y-SC);g.restore();}};
+window.TG_onMove=function(S){if(SYNC.denied||!SYNC.on||Date.now()-lastPositionPush<160)return;lastPositionPush=Date.now();const key=window.TG_ADMIN?'admin':String(state.role);SYNC.db.set(SYNC.R('pos/'+key),{role:state.role,f:S.f,x:S.x,y:S.y,d:S.dir,n:liveName(state.role),at:Date.now()}).catch(()=>{});};
+window.TG_drawOthers=function(g,f,ox,oy,T,SC,time,sprite,roomAt,S){const mine=roomAt(f,S.x,S.y);for(const p of Object.values(positions||{})){if(p.f!==f||p.role===state.role||Date.now()-p.at>20000)continue;const other=roomAt(f,p.x,p.y);if(!window.TG_ADMIN&&!(mine&&other&&mine.id===other.id)&&Math.abs(p.x-S.x)+Math.abs(p.y-S.y)>3)continue;const box=window.TG_spriteRect(p.x,p.y,ox,oy,T,SC),x=box.x,y=box.y,spr=sprite(p.role===DIRECTOR?7:p.role+1,p.d||'down',0);g.save();g.globalAlpha=.92;g.drawImage(spr,0,0,spr.width,spr.height,x,y,box.width,box.height);g.font=`bold ${Math.max(10,5*SC)}px sans-serif`;g.textAlign='center';g.strokeStyle='#050810';g.lineWidth=Math.max(2,SC);g.strokeText(p.n||'',x+box.width/2,y-SC);g.fillStyle=p.role===DIRECTOR?'#e6c48b':'#f3f4f6';g.fillText(p.n||'',x+box.width/2,y-SC);g.restore();}};
 let lastRem=null;
 function tick2042(){
  const rem=remaining();for(const id of ['homeTimer','admTimer'])if(el(id))el(id).textContent=rem===null?'--:--':mmss(rem);if(el('phaseTop'))el('phaseTop').textContent=phaseName()+(rem===null?'':' · '+mmss(rem));
@@ -356,6 +429,7 @@ function tick2042(){
  lastRem=rem;if(SYNC.on&&positionWatched!==SYNC.db){positionWatched=SYNC.db;SYNC.db.watch(SYNC.R('pos'),v=>positions=v||{});}if(SYNC.on&&window.TG_isOpen?.()&&Date.now()-lastPositionPush>2000)TG_onMove(TG_state());if(pendingRender&&!typingNow()&&!window.TG_isOpen?.())softRender();
 }
 function boot2042(){
+ document.addEventListener('pointerdown',()=>{lastPointerDown2042=Date.now();},{capture:true,passive:true});
  const memo=document.createElement('button');memo.id='caseMemoButton';memo.className='btn outline v3-memo-button';memo.textContent='✎ 메모';memo.onclick=openMemo;document.body.appendChild(memo);
  const closeMap=window.TG_close;window.TG_close=function(){const key=window.TG_ADMIN?'admin':String(state.role);closeMap();if(SYNC.on)SYNC.db.remove(SYNC.R('pos/'+key)).catch(()=>{});};
  render();setInterval(tick2042,1000);setInterval(updatePresence,4000);connectFirebase();
@@ -372,6 +446,15 @@ window.V22={remaining,mmss,scoreCtx:()=>({ballots:currentBallots(),finalVotes:SY
 const TG = window.TG_DATA;
 const MAPS = TG.maps, SPAWNS = TG.spawns, CLUES = TG.clues, FLAVOR = TG.flavor, ALIBIS = TG.alibis;
 const TS = 16; const ART_SCALE=2; const LODGE_LIGHTS={};
+// CINEMA_AVATAR_SCALE_V2: the 32×48 authored sprite shares the cinema's art scale.
+// Keep the original one-cell navigation footprint and anchor its feet to that cell.
+const CINEMA_SPRITE = Object.freeze({width:32,height:48});
+function cinemaSpriteRect(x,y,ox,oy,T,SC){
+  const width=CINEMA_SPRITE.width*SC,height=CINEMA_SPRITE.height*SC;
+  return {x:Math.round(ox+(x+.5)*T-width/2),y:Math.round(oy+(y+1)*T+SC-height),width,height};
+}
+window.TG_spriteRect=cinemaSpriteRect;
+
 const LIMIT_KEY = 'lastscreening2042_tg_limits';
 
 // ── 앱 연결 ──
@@ -666,8 +749,8 @@ function render(now){
   // 플레이어
   if (mode!=='title' && S.role){
     const spr = sprite(S.role, S.dir, player.moving ? player.step : 0);
-    const px = ox + player.ix*T, py = oy + (player.iy+1)*T - 22*SC + SC;
-    ctx.drawImage(spr, 0,0,spr.width,spr.height, Math.round(px), Math.round(py), 16*SC, 22*SC);
+    const box = cinemaSpriteRect(player.ix,player.iy,ox,oy,T,SC);
+    ctx.drawImage(spr, 0,0,spr.width,spr.height, box.x,box.y,box.width,box.height);
   }
   if (mode!=='title' && window.TG_drawOthers) { try{ window.TG_drawOthers(ctx,f,ox,oy,T,SC,now,sprite,roomAt,S); }catch(e){} }
   // 조명
@@ -950,10 +1033,12 @@ async function open(adminFlag){
       '1층, 2층, 지하 설비층을 오갈 수 있다. 아직 현장 보존 중인 증거는 2차 수집부터 확인할 수 있다.',
       S.limits[S.phase]>0?`이번 수집에서 자세히 살펴볼 수 있는 곳은 ${S.limits[S.phase]}군데다. 먼저 조사한 사람이 증거를 보관한다.`:'먼저 조사한 사람이 증거를 보관한다. 서로 발견한 내용을 교환하자.'], me.name);
   }
+  if(!running)return;
   if (S.phase===2 && !t.intro2){
     t.intro2=true; save();
     await say(['2차 증거 수집이 시작되었다.','문서윤이 현장 보존 기록을 마쳤다. 영사실의 범행 흔적과 추가 기록을 자세히 조사할 수 있다.','각 층의 길은 그대로 열려 있다. 이전에 조사한 장소와 개인 소지품을 다시 확인해 보자.','개인 소지품은 그 자리에 둔 채 내용을 열람한다.'], '2차 증거 수집');
   }
+  if(!running)return;
   if (state.stage==='explore3' && !t.intro3){
     t.intro3=true; save();
     await say(['경찰이 도착할 시간이 가까워진다.','마지막 증거 수집이다. 이번에는 새 증거를 딱 1개만 가져갈 수 있다.','이미 가진 증거는 그대로 남는다. 마지막으로 확인할 기록을 고르자.'], '마지막 증거 수집');
@@ -966,6 +1051,28 @@ function close(){
   try{ if(typeof rerender==='function') rerender(); }catch(e){}
 }
 window.TG_open = open; window.TG_close = close; window.TG_state = ()=>S; window.TG_isOpen = ()=>running;
+// Read-only display diagnostics: CSS pixels, native aspect ratio and shared foot anchor.
+window.TG_viewQA=()=>({
+  viewport:{width:VW,height:VH,dpr:DPR,canvasWidth:view.width,canvasHeight:view.height},
+  tileCSS:TS*SC/DPR,
+  avatar:{widthCSS:CINEMA_SPRITE.width*SC/DPR,heightCSS:CINEMA_SPRITE.height*SC/DPR,widthTiles:CINEMA_SPRITE.width/TS,heightTiles:CINEMA_SPRITE.height/TS},
+  floor:S.f,position:{x:S.x,y:S.y},navigationFootprintTiles:1,
+  hud:Array.from(ROOT.querySelectorAll('#hud button')).map(b=>{const r=b.getBoundingClientRect();return{id:b.id,x:r.x,y:r.y,width:r.width,height:r.height};})
+});
+const cinemaHudStyle=document.createElement('style');
+cinemaHudStyle.id='cinemaHudResponsive';
+cinemaHudStyle.textContent=`
+/* Cinema map HUD: preserve all original controls with readable mobile tap targets. */
+#hud .iconbtn{min-width:44px;min-height:44px;height:auto;padding:8px 10px}
+@media(max-width:480px){
+  #hud{flex-wrap:wrap;align-items:flex-start;row-gap:6px;padding-left:12px;padding-right:12px}
+  #hud .place{flex:1 0 100%;max-width:100%}
+  #hud .hud-r{width:100%;justify-content:flex-end;flex-wrap:wrap;gap:6px}
+  #hud .place b{font-size:17px}
+}
+`;
+ROOT.appendChild(cinemaHudStyle);
+
 window.TG_resetMine = ()=>{ state.tg = {}; try{ persist(); }catch(e){} };
 window.TG_openCard = id=>{ buildRoles(); S.role=state.role+1; const t=tgState(); S.got=t.got; HOST.style.display='block'; mode='sheet'; openCard(id).then(()=>{ if(!running){ HOST.style.display='none'; mode='off'; } }); };
 window.TG_alibiHtml = (id, filter)=>{ buildRoles(); aliFilter = filter||'all'; return alibiHtml(id, false); };
@@ -1788,7 +1895,7 @@ ROOT.querySelectorAll('#dpad button').forEach(b=>{
 });
 $('btnA').addEventListener('pointerdown', e=>{ e.preventDefault(); if(mode==='dialog') dlgTap(); else interact(); });
 $('btnB').addEventListener('pointerdown', e=>{ e.preventDefault(); if(mode==='play') openNote(); else if(mode==='dialog') dlgTap(); });
-$('btnExit').onclick=()=>{ if(mode==='play'||mode==='sheet') close(); };
+$('btnExit').onclick=()=>close();
 $('btnGlint').onclick=()=>{ S.glint=!S.glint; save(); toast(S.glint?'조사 지점 반짝임 켬':'조사 지점 반짝임 끔'); };
 view.addEventListener('pointerdown', ()=>{ if(mode==='dialog') dlgTap(); });
 window.addEventListener('resize', ()=>{ if(running) resize(); });
@@ -1929,4 +2036,124 @@ window.TG_openCard=function(id){const c=CLUES.find(x=>x.id===id);if(!c)return;if
 
 })();
 
-</script><script>boot2042();</script></body></html>
+</script>
+<style id="ls-lodge-app-style">/* Same navy/gold shell, five tabs, compact cast and console as Cheongmyeong. */
+.home-timer{text-align:center;padding:4px 0 10px}.home-timer small{display:block;color:var(--gold);letter-spacing:.08em;font-size:12.5px}.home-timer b{display:block;font-family:Georgia,'Nanum Myeongjo',serif;font-size:clamp(52px,17vw,76px);line-height:1.05;color:#f5deb1;font-variant-numeric:tabular-nums;letter-spacing:.04em;text-shadow:0 0 22px #c8a76844}
+body.admin-mode.dir-nav>nav.nav{display:grid!important}.ls-director-status{background:#2a2216;border-color:#8d7650}.v24-cast{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.v24-chip{display:grid;grid-template-columns:28px minmax(0,1fr);align-items:center;text-align:left;background:#132235;border:1px solid var(--line);border-radius:10px;padding:7px 9px;color:inherit;min-height:58px}.v24-chip span{grid-row:span 2;color:var(--gold);font-weight:700}.v24-chip b{font-size:13px}.v24-chip small{color:var(--mute);font-size:11px;overflow-wrap:anywhere}.v24-chip.on{border-color:#7fb59a}
+.ls-rules{margin:0 0 16px;padding-left:20px}.ls-rules li{margin:8px 0}.ls-wide-action{width:100%;margin-top:12px;min-height:48px}.ls-cast-list .cast-card{min-height:93px}.ls-start-actions{gap:14px;padding-top:6px}.ls-start-actions .btn{background:transparent;color:#adbdd0;border:0;padding:8px;font-size:13px;min-height:42px}.ls-script{white-space:pre-line;line-height:1.9;background:#101b2a;border-left:3px solid var(--gold);padding:14px;margin:10px 0}.tg-x{max-width:100%;overflow-x:auto}.tg-grid{width:100%;border-collapse:collapse;font-size:12px}.tg-grid th,.tg-grid td{border:1px solid #2c3d52;padding:7px 6px;text-align:left;vertical-align:top}.tg-grid th{background:#1a2a3d;color:var(--gold)}.tg-grid .btn{min-height:32px;padding:4px 9px;font-size:12px}.ls-stage-table td:first-child{width:48%}.ls-stage-table td:nth-child(2){white-space:nowrap}.ls-current-stage{background:#3b342c}.ls-timer-actions{margin-bottom:11px;gap:6px}.ls-timer-actions .btn{font-size:12px;padding:8px 10px}.tabs .btn{white-space:nowrap;flex:0 0 auto}.case-memo{min-height:150px;resize:vertical;line-height:1.75}#previewName{margin-bottom:8px}#previewRole{margin-bottom:12px}
+body.chat-open>main.shell{display:flex;flex-direction:column;padding-bottom:12px}body.chat-open .chat-top{flex:0 0 auto}body.chat-open .chat-stream{flex:1 1 auto;min-height:100px;max-height:none}body.chat-open .chat-compose{flex:0 0 auto;padding-top:10px}.chat-stream .bubble{white-space:pre-wrap}.chat-compose .field{font-size:16px!important}.chat-compose .btn{min-height:48px}body.chat-open .v3-memo-button{display:none}
+@media(max-width:390px){.ls-timer-actions .btn{font-size:11px;padding:7px 8px}.tg-grid{font-size:11px}.tg-grid th,.tg-grid td{padding:6px 5px}}
+</style>
+<script id="ls-lodge-app-structure">// Restore the lodge application's screen structure with Last Screening content.
+(function(){
+'use strict';
+const E=v=>safe(v==null?'':v);
+const STAGE_TEXT=Object.fromEntries(STAGES.map(s=>[s[0],s[1]]));
+const directorName=()=>DATA.people[DIRECTOR].name;
+const statusText=()=>SYNC.connectionIssue?E(SYNC.connectionIssue):SYNC.on?(SYNC.connected?'● 진행자와 연결됨':'○ 서버 연결 중…'):'오프라인 시연';
+const timer=()=>`<div class="home-timer"><small>${E(phaseName())}</small><b id="homeTimer">${remaining()==null?'--:--':mmss(remaining())}</b></div>`;
+window.dispNo=i=>Number(i)===DIRECTOR?PLAYER_COUNT+1:ACTIVE_ROLE_INDICES.indexOf(Number(i))+1;
+function participantRows(){
+ const cast=currentCast(),pres=Object.values(SYNC.data.presence||{}),ballots=currentBallots();
+ return ACTIVE_ROLE_INDICES.map(i=>{const c=cast[i],online=pres.some(x=>x&&Number(x.role)===i);return `<tr><td>${String(dispNo(i)).padStart(2,'0')}</td><td>${E(DATA.people[i].name)}</td><td>${E(c?.name||'미배정')}</td><td>${c?(SYNC.on?(online?'접속':'오프라인'):'이 기기 시연'):''}</td><td>${ballots[i]?'제출 완료':'—'}</td></tr>`;}).join('');
+}
+function castOverview(){
+ const cast=currentCast(),pres=Object.values(SYNC.data.presence||{});
+ return panel(`<h3>참가자 (${ACTIVE_ROLE_INDICES.filter(i=>cast[i]).length}/${PLAYER_COUNT})</h3><div class="v24-cast">${[...ACTIVE_ROLE_INDICES,DIRECTOR].map(i=>`<button type="button" class="v24-chip ${pres.some(p=>p&&Number(p.role)===i)?'on':''}" onclick="openPerson(${i})"><span>${String(dispNo(i)).padStart(2,'0')}</span><b>${E(DATA.people[i].name)}</b><small>${i===DIRECTOR?'관리자':E(cast[i]?.name||'미배정')}</small></button>`).join('')}</div>`);
+}
+function memoPanel(){
+ return panel(`<h3>사건 메모</h3><p class="muted" style="font-size:12px">토론 중 떠오른 가설, 시간표와 증거 관계를 자유롭게 정리하세요. 이 메모는 본인만 볼 수 있습니다.</p><textarea class="field case-memo" id="caseMemoText" placeholder="직접 본 사실, 전해 들은 진술, 확인할 시각을 구분해 기록하세요." oninput="LS_saveCaseMemo(this.value)">${E(state.notes||'')}</textarea><div style="text-align:right"><small class="muted" id="memoSaved">입력 시 자동 저장</small></div>`);
+}
+window.LS_saveCaseMemo=function(v){state.notes=String(v);persist();const hint=el('memoSaved');if(hint)hint.textContent='자동 저장됨';};
+function directorHome(){
+ const unread=personalMail().filter(m=>m.to===DIRECTOR&&!state.seenMailIds?.includes(m.id)).length;
+ const index=STAGES.findIndex(s=>s[0]===state.stage),next=STAGES[index+1];
+ return `<div class="sticky-status ls-director-status">🎬 <b>관리인 ${E(directorName())}</b> · 관리자<br><small>${statusText()} · 참가자 ${ACTIVE_ROLE_INDICES.filter(i=>currentCast()[i]).length}/${PLAYER_COUNT}명</small></div>`+
+ panel(`${timer()}${adminAuthenticated?`<div class="row" style="justify-content:center;gap:6px">${ui('','−1분','adjustTimer(-1)','outline')}${ui('','+1분','adjustTimer(1)','outline')}${ui('','+5분','adjustTimer(5)','outline')}${next?ui('',`다음: ${E(next[1])} ▶`,'nextStage()','primary'):''}</div>`:`<p class="muted" style="text-align:center">진행 조작은 「관리자」 탭에서 비밀번호 확인 후 할 수 있습니다.</p>`}`)+
+ (unread?panel(`<h3>새 메시지 ${unread}건</h3>${ui('','채팅 열기',"setview('chat')",'primary')}`):'')+
+ panel(`<h3>오늘 진행자가 할 일</h3><ul class="ls-rules"><li><b>설정집 숙지·오프닝</b>: 참가자가 자기 설정집을 읽은 뒤 오프닝을 함께 확인합니다.</li><li><b>1·2차 수색</b>: 조사 단계와 타이머를 조정하고 필요하면 지도를 시찰합니다.</li><li><b>대면 토론</b>: 직접 본 사실과 진행자로서 아는 정답을 구분하고, 요청에 맞춰 단계별 힌트를 전합니다.</li><li><b>최종 투표</b>: 참가자 네 명이 한 명씩 지목합니다. 동률이면 결선을 한 번 진행합니다.</li><li><b>엔딩 공개</b>: 관리자에서 개인 목표와 정산자료 공개 여부를 확인한 뒤 개표합니다.</li></ul><div class="row">${ui('','관리자 패널 열기',"setview('admin')",'primary')}${ui('','오프닝 재생','openOpening()','outline')}${state.stage==='finished'?ui('','엔딩북 열기',"setview('book')",'outline'):''}</div>`)+castOverview()+memoPanel();
+}
+home=function(){
+ if(!role())return startPage();if(selectedPerson>=0)return personContact(selectedPerson);if(isDirector())return directorHome();
+ return `<div class="sticky-status"><b>${E(liveName(state.role))}</b> · ${E(role().job)}<br><small>2026년 11월 14일 · 은하극장 · 「잔상」 시사회</small></div>`+
+ panel(`${timer()}<div class="row between"><div><b>${statusText()}</b><br><small class="muted">진행자가 단계를 바꾸면 화면과 남은 시간이 함께 맞춰집니다.</small></div></div>${isExploring()?`<button type="button" class="btn primary ls-wide-action" onclick="setview('map')">극장 탐색하러 가기</button>`:''}${state.stage==='intro'?`<button type="button" class="btn primary ls-wide-action" onclick="openOpening()">오프닝 재생</button>`:''}${state.stage==='vote'?`<button type="button" class="btn primary ls-wide-action" onclick="setview('vote')">최종 투표 열기</button>`:''}${state.stage==='finished'?`<button type="button" class="btn primary ls-wide-action" onclick="setview('book')">엔딩과 전체 기록</button>`:''}`)+
+ (state.stage==='vote'?panel(mainVotePanel()):'')+
+ panel(`<div class="row between"><div><h2 style="margin:0">등장인물</h2><small class="muted">이름을 누르면 대화·알리바이 메모·투표 기능이 열립니다.</small></div></div><div class="cast-list ls-cast-list">${[...ACTIVE_ROLE_INDICES,DIRECTOR].map(i=>personSummary(i)).join('')}</div>`)+memoPanel()+`<p class="footer-note">현장 토론은 직접 진행합니다. 채팅에서는 1:1 연락과 진행자 문의를 보낼 수 있습니다. ${ui('','오프닝 다시 보기','openOpening()','outline')}</p>`;
+};
+personSummary=function(i){const p=DATA.people[i];return `<button type="button" class="cast-card" onclick="openPerson(${i})"><span class="role-index">${String(dispNo(i)).padStart(2,'0')}${i===DIRECTOR?' · 관리자':''}</span><span class="cast-identity"><b>${E(liveName(i))}${i===state.role?' <span class="gold">· 나</span>':''}</b><small>${E(p.job)}</small></span></button>`;};
+const inheritedNav=nav;
+nav=function(){
+ document.body.classList.toggle('dir-nav',isDirector());
+ if(adminMapMode||window.TG_isOpen?.()){const n=el('nav');if(n)n.style.display='none';return;}
+ inheritedNav();
+};
+const inheritedStart=startPage;
+startPage=function(){
+ let html=inheritedStart();
+ // The same invitation and footer treatment as the source lodge shell.
+ return html.replace('<div class="row" style="justify-content:center">','<div class="row ls-start-actions" style="justify-content:center">');
+};
+let directorTab='story';
+window.LS_directorTab=function(k){directorTab=k;render();};
+function allEndings(){
+ const en=TG_DATA.endings;
+ return panel(`<h3>엔딩 판정</h3>${Object.entries(en.endings||{}).map(([key,e])=>`<details class="entry"><summary>ENDING ${E(key)} · ${E(e.title)}</summary><p class="muted">${E(e.condition)}</p>${e.body.map(t=>`<p class="storyp">${E(t)}</p>`).join('')}</details>`).join('')}`)+panel(`<h3>사건의 해설</h3>${(en.explain||[]).map(t=>`<p class="storyp">${E(t)}</p>`).join('')}<h3>실제 시간표</h3><div class="timeline">${DATA.timeline.map(t=>`<div class="timeline-row"><div class="clock">${E(t.time)}</div><div class="time-detail"><b>${E(t.location)}</b><p>${E(t.people)} · ${E(t.action)}</p></div></div>`).join('')}</div>`);
+}
+const inheritedRolePage=rolePage;
+rolePage=function(){
+ if(!role())return inheritedRolePage();
+ const p=role();
+ if(!isDirector()){
+  // Keep every personal fact, objective and answer in its existing private tab.
+  let html=inheritedRolePage();
+  if(roleTab==='timeline'){
+   const rows=`<h3>11월 14일 · 시간별 행적</h3><div class="timeline">${(p.daySchedule||[]).map(r=>`<div class="timeline-row"><div class="clock">${E(r.time)}</div><div class="time-detail"><b>${E(r.place)}</b><p>${E(r.detail)}</p>${r.corroboration?`<div class="witness">교차 확인: ${E(r.corroboration)}</div>`:''}</div></div>`).join('')}</div>`;
+   html=html.replace(/<div class="v3-timeline">[\s\S]*?<\/section>$/,rows+'</section>');
+  }
+  return html;
+ }
+ const tabs=[['story','인물 이야기'],['script','진행자 대본'],['schedule','시간별 행적'],['ending','엔딩북'],['memo','메모']];
+ let body='';
+ if(directorTab==='story')body=panel(`<h3>당신은 어떤 사람인가</h3><p class="storyp"><b>${E(p.oneLine)}</b></p>${paragraphs(p.prologue)}<h4>이곳에 온 목적</h4><p class="storyp">${E(p.purpose)}</p><h4>직접 알고 있는 사실</h4><p class="storyp">${E(p.privateKnowledge)}</p>`);
+ if(directorTab==='script')body=panel(`<h3>힌트 대본</h3>${Object.entries(p.hints||{}).map(([k,h],i)=>`<div class="entry"><span class="tag">${i+1}단계 힌트</span><div class="ls-script">“${E(h.script)}”</div></div>`).join('')}<h4>진술 원칙</h4><div class="ls-script">${E(p.guide?.rule)}</div><h4>진행 도구</h4><p>인터뷰 기록, 개인 힌트 전송과 전체 공지는 관리자 패널에서 사용합니다.</p>${ui('','관리자 패널 열기',"setview('admin')",'primary')}`);
+ if(directorTab==='schedule')body=panel(`<h3>11월 14일 · 시간별 행적</h3><div class="timeline">${(p.daySchedule||[]).map(r=>`<div class="timeline-row"><div class="clock">${E(r.time)}</div><div class="time-detail"><b>${E(r.place)}</b><p>${E(r.detail)}</p><div class="witness">교차 확인: ${E(r.corroboration)}</div></div></div>`).join('')}</div>`);
+ if(directorTab==='ending')body=`<div class="case-notice">진행자 전용: 결말과 진범이 모두 나옵니다. 참가자에게 화면이 보이지 않게 해 주세요.</div>`+allEndings();
+ if(directorTab==='memo')body=memoPanel();
+ return `<h2>진행자 설정집</h2><div class="card profile-cover"><small class="muted">DIRECTOR BOOK · ROLE ${String(PLAYER_COUNT+1).padStart(2,'0')}</small><h2>${E(p.declaration)}</h2><p class="muted">관리자 · 투표 제외 · 채팅·지도·공지 참여</p></div><div class="tabs">${tabs.map(([k,label])=>ui('',label,`LS_directorTab('${k}')`,directorTab===k?'primary':'outline')).join('')}</div>${body}`;
+};
+function registrationPanel(){
+ const cast=currentCast(),regs=Object.entries(SYNC.data.regs||{}).sort((a,b)=>(a[1].at||0)-(b[1].at||0)),byDevice={};
+ Object.entries(cast).forEach(([i,c])=>{if(c?.device)byDevice[c.device]=Number(i);});
+ const waiting=regs.filter(([dev])=>byDevice[dev]==null),assigned=ACTIVE_ROLE_INDICES.filter(i=>cast[i]).length;
+ let body=`<h3>참가자 등록 · 역할 일괄 배정</h3><p class="muted">참가자는 이름·성별을 등록하고 대기합니다. 참가자 네 명의 역할을 배정하며 관리인은 별도로 입장합니다.</p><p>참가자 등록 <b>${regs.length}</b>명 · 배정 대기 <b>${waiting.length}</b>명 · 배정 완료 <b>${assigned}/${PLAYER_COUNT}</b>명</p>`;
+ if(SYNC.on){body+=ui('','등록자 역할 일괄 배정','adminAssignAll()','primary');if(regs.length)body+=`<div class="tg-x" style="margin-top:10px"><table class="tg-grid"><thead><tr><th>이름</th><th>성별</th><th>배역</th><th>관리</th></tr></thead><tbody>${regs.map(([dev,r])=>{const id=byDevice[dev];return `<tr><td>${E(r.name)}</td><td>${E(r.gender)}</td><td>${id!=null?E(DATA.people[id]?.name):'대기'}</td><td>${id!=null&&roleActive(id)?ui('','해제',`adminUnassign(${id})`,'outline'):id==null?ui('','삭제',`LS_removeRegistration(${JSON.stringify(dev).replace(/"/g,'&quot;')})`,'outline'):''}</td></tr>`;}).join('')}</tbody></table></div>`;}
+ else body+=`<p class="muted">현재 기기 시연입니다. 참가자 배역을 골라 화면과 기능을 확인할 수 있습니다.</p><input class="field" id="previewName" value="테스트 참가자" aria-label="시연 참가자 이름"><select class="field" id="previewRole" aria-label="시연 배역">${activePeopleMap((p,i)=>`<option value="${i}">${E(p.name)} · ${E(p.job)}</option>`).join('')}</select>${ui('','선택 배역 시연',"assignSpecific(Number(el('previewRole').value))",'outline')}`;
+ return panel(body);
+}
+window.LS_removeRegistration=async function(device){if(!adminAuthenticated||!SYNC.on||!confirm('이 대기 등록을 지울까요?'))return;await SYNC.db.remove(SYNC.R('regs/'+device));};
+const inheritedAdminPage=adminPage;
+adminPage=function(){
+ if(!adminAuthenticated)return inheritedAdminPage();
+ const rem=remaining(),votes=currentVoteState(),ballots=currentBallots();
+ const stageRows=STAGES.filter(s=>s[0]!=='finished').map(([key,label,minutes])=>`<tr${state.stage===key?' class="ls-current-stage"':''}><td>${E(label)}</td><td>${minutes?minutes+'분':'—'}</td><td><button type="button" class="btn ${state.stage===key?'primary':'outline'}" onclick="startPhase('${key}')">${state.stage===key?'다시 시작':'시작'}</button></td></tr>`).join('');
+ const stages=panel(`<h3>진행 단계와 타이머</h3><p class="muted">「시작」을 누르면 참가자들의 단계와 남은 시간이 함께 바뀝니다. 증거 수집 시간이 끝나면 조사가 잠깁니다.</p><div class="row ls-timer-actions">${ui('','다음 단계 ▶','nextStage()','primary')}${ui('','+1분','adjustTimer(1)','outline')}${ui('','+5분','adjustTimer(5)','outline')}${ui('','−1분','adjustTimer(-1)','outline')}${ui('','지금 종료','adjustTimer(0)','outline')}</div><div class="tg-x"><table class="tg-grid ls-stage-table"><thead><tr><th>진행 단계</th><th>기본 시간</th><th>시작</th></tr></thead><tbody>${stageRows}</tbody></table></div><p>${ui('','엔딩 · 점수 공개','finalize()','primary')}${ui('','오프닝 재생','openOpening()','outline')}</p>`);
+ const inspect=panel(`<h3>관리자 지도 시찰</h3><p class="muted">관리인 ${E(directorName())}으로 극장을 자유롭게 이동하며 조사 지점의 획득 현황을 봅니다. 증거와 소지품은 가져가지 않습니다.</p>${ui('','관리자 지도 탐색','enterAdminMap()','primary')}`);
+ const finalVote=panel(`<h3>최종 투표 현황</h3><p>${votes.round===1?'결선 1회':'첫 투표'} · <b>${Object.keys(ballots).length}/${PLAYER_COUNT}명</b> 제출</p><p class="muted">한 명만 지목합니다. 유일한 최다득표자를 지목하며 동률이면 결선 1회, 재동률이면 지목 실패입니다. 관리자는 투표하지 않습니다.</p>${ui('','개표 · 필요하면 결선 시작','finalize()','primary')}`);
+ const roster=panel(`<h3>실시간 동기화 · ${SYNC.on?(SYNC.connected?'연결됨':'연결 중'):'현재 기기 시연'}</h3><div class="tg-x"><table class="tg-grid"><thead><tr><th>#</th><th>배역</th><th>참가자</th><th>상태</th><th>투표</th></tr></thead><tbody>${participantRows()}</tbody></table></div>`);
+ const notices=panel(`<h3>전체 공지 · 단계별 힌트</h3><p class="muted">공지 내용을 확인한 뒤 보내세요. 개별 힌트는 인터뷰 기록에서 해당 참가자에게 전송할 수 있습니다.</p><textarea class="field" id="noticeText" rows="3" placeholder="전체 공지"></textarea><p>${ui('','공지 보내기','sendNotice()','primary')}${ui('','참가자 대화',"setview('chat')",'outline')}</p>${Object.entries(DATA.people[DIRECTOR].hints||{}).map(([k,h],i)=>`<details class="entry"><summary>${i+1}단계 힌트</summary><p>${E(h.script)}</p>${ui('','공지에 넣기',`fillNotice('${k}')`,'outline')}</details>`).join('')}`);
+ const gm=panel(`<h3>진행자 전용 자료</h3><details><summary>사건의 전말 · 실제 시간표</summary>${allEndings()}</details><details class="entry"><summary>전체 증거 배치 · 해설</summary>${TG_DATA.clues.filter(c=>c.kind!=='bag').map(c=>`<div class="entry"><b>${E(c.id)} · ${E(c.title)}</b><p>${E(TG_DATA.spotNames[c.spot])} · ${c.phase}차</p><small>${E(c.gm)}</small></div>`).join('')}</details>`);
+ const reset=panel(`<h3>초기화</h3><p class="muted">${SYNC.on?'이 작품의 참가자 배정·진행·증거·쪽지·투표를 초기화합니다.':'이 기기의 이 작품 시연 기록을 초기화합니다.'}</p><div class="row">${ui('','새 게임 시작','resetDemo()','outline')}${ui('','관리자 로그아웃','adminLogout()','outline')}</div>`);
+ return `<h2>진행자 콘솔</h2><div class="sticky-status">현재 단계: <b>${E(phaseName())}</b> · 남은 시간 <b class="gold" id="admTimer">${rem==null?'시간 제한 없음':mmss(rem)}</b><br><small>${statusText()} · 참가자 ${PLAYER_COUNT}명 + 관리자 1명</small></div>${stages}${registrationPanel()}${inspect}${finalVote}${adjudicationPanel()}${panel('<h3>점수 현황'+(state.stage==='finished'?'':' <small class="muted">(미리보기)</small>')+'</h3>'+scoreTable())}${roster}${directorToolsPanel()}${notices}${gm}${reset}`;
+};
+// Chat follows the lodge tool's stream and fixed composer, using the existing DM handler.
+chatPage=function(){
+ if(!role())return startPage();
+ if(activeConversation===-1)return `<h2>개인 채팅</h2><p class="muted">다른 참가자와 개인적으로 연락하고 진행자에게 문의할 수 있습니다. 현장 토론은 직접 진행합니다.</p>${[...ACTIVE_ROLE_INDICES,DIRECTOR].filter(i=>i!==state.role).map(i=>{const msgs=personalMail().filter(m=>m.from===i||m.to===i),last=msgs[msgs.length-1],unread=msgs.some(m=>m.to===state.role&&!state.seenMailIds?.includes(m.id));return `<button type="button" class="thread-card" onclick="openConversation(${i})"><span class="thread-avatar">${i===DIRECTOR?'🎬':E(DATA.people[i].name.slice(0,1))}</span><span class="thread-meta"><b>${E(liveName(i))}</b><small>${last?E(last.body):E(DATA.people[i].job)+' · 메시지를 보내 대화 시작'}</small></span>${unread?'<span class="unread-dot"></span>':''}</button>`;}).join('')}`;
+ const peer=activeConversation,msgs=personalMail().filter(m=>m.from===peer||m.to===peer);
+ return `<div class="chat-top"><button type="button" class="btn outline" onclick="activeConversation=-1;render()">← 대화 목록</button><div style="text-align:right"><b>${E(liveName(peer))}</b><br><small class="muted">${E(DATA.people[peer].job)}</small></div></div><div id="chatStream" class="chat-stream">${msgs.length?msgs.map(m=>`<div class="bubble ${m.from===state.role?'mine':''}"><small>${E(liveName(m.from))} · ${new Date(m.at).toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'})}</small>${E(m.body)}</div>`).join(''):'<div class="case-notice">아직 메시지가 없습니다. 직접 만나 말하기 어려운 내용을 전해 보세요.</div>'}</div><div class="chat-compose"><textarea id="chatText" class="field" rows="2" maxlength="1000" placeholder="메시지를 입력하세요" onkeydown="if(event.key==='Enter'&&(event.ctrlKey||event.metaKey)){event.preventDefault();sendMessage()}"></textarea>${ui('','전송','sendMessage()','primary')}</div>${peer===DIRECTOR&&roleActive(state.role)?`<p>${ui('','내 증거 제시','showEvidenceToDirector()','outline')}</p>`:''}`;
+};
+const inheritedRender=render;
+render=function(){document.body.classList.toggle('dir-nav',isDirector());return inheritedRender();};
+})();
+</script>
+<script>boot2042();</script></body></html>
