@@ -1,7 +1,7 @@
 'use strict';
-const BUILD='eunha-reset-v6-20261023';
+const BUILD='eunha-opening-order-v6.3-20261024';
 const CACHE='last-screening-2042-'+BUILD;
-const CORE=['./','./index.html','./assets/game/cinema.js?v='+BUILD,'./manifest.webmanifest','./icon-192.png','./icon-512.png','./assets/opening/last_screening_opening_poster.jpg'];
+const CORE=['./','./index.html','./assets/game/cinema.js?v='+BUILD,'./cinema.js?v='+BUILD,'./manifest.webmanifest','./icon-192.png','./icon-512.png','./assets/opening/last_screening_opening_poster.jpg','./last_screening_opening_poster.jpg'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{
  const cache=await caches.open(CACHE);
  // A missing optional poster must not prevent a complete engine update.
