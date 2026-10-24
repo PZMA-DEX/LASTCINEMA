@@ -1,5 +1,5 @@
 'use strict';
-const BUILD='last-screening-html-opening-v13-1-no-pause-20261024';
+const BUILD='last-screening-html-opening-v13-2-auto-play-recovery-20261024';
 const CACHE='last-screening-2042-'+BUILD;
 const CORE=['./','./index.html','./assets/game/cinema.js?v='+BUILD,'./assets/game/mobile-controls-v12.js?v='+BUILD,'./cinema.js?v='+BUILD,'./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{
