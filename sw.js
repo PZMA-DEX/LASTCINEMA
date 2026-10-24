@@ -1,7 +1,7 @@
 'use strict';
-const BUILD='last-screening-v19-artmap-20261024';
+const BUILD='last-screening-v19c-mapfix-20261024';
 const CACHE='last-screening-2042-'+BUILD;
-const CORE=['./','./index.html',...['cinema-layout-v18.js','cinema-surfaces-v18.js','cinema-props-v18.js','cinema.js','cinema-world-v17.js','mobile-controls-v12.js'].map(name=>'./assets/game/'+name+'?v='+BUILD),...['lobby','ticket','office','theatre','projection','archive','storage','workshop'].map(id=>'./assets/game/maps/'+id+'.png'),'./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const CORE=['./','./index.html',...['cinema-layout-v18.js','cinema-surfaces-v18.js','cinema-props-v18.js','cinema.js','cinema-world-v17.js','mobile-controls-v12.js'].map(name=>'./assets/game/'+name+'?v='+BUILD),'./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{
  const cache=await caches.open(CACHE);
  // A missing optional poster must not prevent a complete engine update.
