@@ -1,7 +1,7 @@
 'use strict';
-const BUILD='last-screening-v14-logo-cinematic-fade-20261024';
+const BUILD='last-screening-v16-world-20261024';
 const CACHE='last-screening-2042-'+BUILD;
-const CORE=['./','./index.html','./assets/game/cinema.js?v='+BUILD,'./assets/game/mobile-controls-v12.js?v='+BUILD,'./cinema.js?v='+BUILD,'./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const CORE=['./','./index.html','./assets/game/cinema.js?v='+BUILD,'./assets/game/mobile-controls-v12.js?v='+BUILD,'./assets/game/cinema-world-v16.js?v='+BUILD,'./cinema.js?v='+BUILD,'./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{
  const cache=await caches.open(CACHE);
  // A missing optional poster must not prevent a complete engine update.
