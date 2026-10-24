@@ -1100,7 +1100,7 @@ function resize(){
  const status=$('status').getBoundingClientRect(),hint=$('hint').getBoundingClientRect();
  metrics.width=r.width||width;metrics.height=r.height||height;metrics.dpr=dpr;metrics.top=Math.max(top.height+status.height+12,64);metrics.bottom=Math.max(controls.height+hint.height+18,116);
 }
-function draw(time){const s=scenes[S.f];if(!s)return;const dpr=Math.min(window.devicePixelRatio||1,2),w=cv.width,h=cv.height,marginTop=metrics.top*dpr,marginBottom=metrics.bottom*dpr;ctx.imageSmoothingEnabled=false;rr(ctx,0,0,w,h,'#0d121b');let sc;if(zoom===1)sc=Math.min(w/(s.w*32),Math.max(64*dpr,h-marginTop-marginBottom)/(s.h*32));else{const tileCSS=Math.min(zoom===2?28:36,Math.max(18,Math.min(metrics.width/9,(metrics.height-metrics.top-metrics.bottom)/6)));sc=tileCSS*dpr/32;}sc=Math.max(.2,Math.min(sc,1.6*dpr));canvasScale=sc;const worldW=s.w*32*sc,worldH=s.h*32*sc;offsetX=worldW<=w?(w-worldW)/2:Math.max(w-worldW,Math.min(0,w/2-(px+.5)*32*sc));const usable=Math.max(64*dpr,h-marginTop-marginBottom);offsetY=worldH<=usable?marginTop+(usable-worldH)/2:Math.max(h-marginBottom-worldH,Math.min(marginTop,marginTop+usable/2-(py+.5)*32*sc));const roomBackground=window.LS_CINEMA_V18?.renderBackground?.(s)||background(s);ctx.imageSmoothingEnabled=roomBackground.width>s.w*32;ctx.imageSmoothingQuality='high';ctx.drawImage(roomBackground,offsetX,offsetY,worldW,worldH);ctx.imageSmoothingEnabled=false;
+function draw(time){const s=scenes[S.f];if(!s)return;const dpr=Math.min(window.devicePixelRatio||1,2),w=cv.width,h=cv.height,marginTop=metrics.top*dpr,marginBottom=metrics.bottom*dpr;ctx.imageSmoothingEnabled=false;rr(ctx,0,0,w,h,'#0d121b');let sc;if(zoom===1)sc=Math.min(w/(s.w*32),Math.max(64*dpr,h-marginTop-marginBottom)/(s.h*32));else{const tileCSS=Math.min(zoom===2?25:31,Math.max(16,Math.min(metrics.width/10.5,(metrics.height-metrics.top-metrics.bottom)/7.2)));sc=tileCSS*dpr/32;}sc=Math.max(.2,Math.min(sc,1.6*dpr));canvasScale=sc;const worldW=s.w*32*sc,worldH=s.h*32*sc;offsetX=worldW<=w?(w-worldW)/2:Math.max(w-worldW,Math.min(0,w/2-(px+.5)*32*sc));const usable=Math.max(64*dpr,h-marginTop-marginBottom);offsetY=worldH<=usable?marginTop+(usable-worldH)/2:Math.max(h-marginBottom-worldH,Math.min(marginTop,marginTop+usable/2-(py+.5)*32*sc));const roomBackground=window.LS_CINEMA_V18?.renderBackground?.(s)||background(s);ctx.imageSmoothingEnabled=roomBackground.width>s.w*32;ctx.imageSmoothingQuality='high';ctx.drawImage(roomBackground,offsetX,offsetY,worldW,worldH);ctx.imageSmoothingEnabled=false;
 if(visibleSpotsScene!==S.f||time-visibleSpotsAt>250){visibleSpotsScene=S.f;visibleSpotsAt=time;visibleSpots=s.spots.filter(p=>{const all=cluesAt(p.id);return all.some(c=>c.phase<=phase())&&!all.every(c=>c.kind!=='bag'&&(S.got[c.id]||owner(c)));});}
 for(const p of visibleSpots){const a=.5+.5*Math.sin(time/370+p.x),x=offsetX+(p.x+.5)*32*sc,y=offsetY+(p.y+.3)*32*sc;rr(ctx,x-5*sc,y-sc,10*sc,2*sc,`rgba(255,224,144,${a})`);rr(ctx,x-sc,y-5*sc,2*sc,10*sc,`rgba(255,224,144,${a})`);}
 if(routeTarget&&scenes[S.f].doors.includes(routeTarget)){const x=offsetX+(routeTarget.x+.5)*32*sc,y=offsetY+(routeTarget.y+.5)*32*sc;ctx.strokeStyle='#f9df8d';ctx.lineWidth=3*dpr;ctx.strokeRect(x-18*sc,y-18*sc,36*sc,36*sc);}
@@ -1262,25 +1262,44 @@ window.MAPS=scenes;window.MAP_VERSION=VERSION;ready=true;
  }
  const sidePortals={};
  function renderSidePortals(g,s,scale){
-  // The generated reference art already includes real front/rear doors. Only
-  // side connections were not visible and need a small physical passage overlay.
+  function drawLamp(g,x,y){
+   const glow=g.createRadialGradient(x,y,0,x,y,18);glow.addColorStop(0,'rgba(255,231,172,.95)');glow.addColorStop(.35,'rgba(255,196,91,.42)');glow.addColorStop(1,'rgba(255,196,91,0)');
+   g.fillStyle=glow;g.beginPath();g.arc(x,y,18,0,Math.PI*2);g.fill();
+   g.fillStyle='#c8a56a';g.fillRect(x-2,y-12,4,20);g.fillStyle='#f8dc9a';g.beginPath();g.arc(x,y-2,5,0,Math.PI*2);g.fill();
+  }
+  function drawLobbyPortal(g,left,x,y){
+   const edge=left?1:-1;
+   g.fillStyle='#29313d';g.fillRect(x-8,y-10,62,78);
+   g.fillStyle='#a98b61';g.fillRect(x-8,y-10,62,4);
+   g.fillStyle='#151d27';g.fillRect(x-2,y-4,48,64);
+   const grad=g.createLinearGradient(x,y,x+44,y);grad.addColorStop(0,'#0c1219');grad.addColorStop(.52,'#1b2630');grad.addColorStop(1,'#0a0f15');
+   g.fillStyle=grad;g.fillRect(x+2,y,40,56);
+   g.fillStyle='rgba(227,197,146,.9)';g.fillRect(left?x+39:x+3,y+2,2,52);
+   g.fillStyle='rgba(255,219,162,.18)';g.fillRect(left?x+6:x+18,y+7,14,42);
+   g.fillStyle='#b48d58';g.fillRect(x+10,y+57,24,4);
+   g.fillStyle='#7e1526';g.fillRect(x+12,y+58,20,18);
+   g.strokeStyle='#cda165';g.lineWidth=1;g.strokeRect(x+12,y+58,20,18);
+   for(let i=0;i<3;i++){g.fillStyle=i%2?'#6d6357':'#514b46';g.fillRect(x+8,y+12+i*12,28,2);}
+   drawLamp(g,left?x+52:x-6,y+8);
+   g.fillStyle='#e7c88d';g.font='bold 12px sans-serif';g.textAlign='center';g.fillText(left?'‹':'›',x+21,y+33);
+  }
+  function drawSidePortal(g,left,x,y){
+   const a=g.createLinearGradient(x,y,x+42,y);a.addColorStop(0,'#10151d');a.addColorStop(.5,'#25313a');a.addColorStop(1,'#090d12');
+   g.fillStyle='#101820';g.fillRect(x-5,y-5,52,65);
+   g.fillStyle='#a28a68';g.fillRect(x-5,y-5,52,3);g.fillStyle='#655b52';g.fillRect(x-5,y+56,52,3);
+   g.fillStyle=a;g.fillRect(x,y,42,55);
+   for(let i=0;i<4;i++){g.fillStyle=i%2?'#6d6254':'#514c48';g.fillRect(x+5,y+9+i*10,32,2);}
+   g.fillStyle='#a68a60';g.fillRect(left?x+39:x,y,3,55);
+   g.fillStyle='#e3c592';g.textAlign='center';g.font='bold 12px sans-serif';g.fillText(left?'‹':'›',x+21,y+31);
+  }
+  // The generated reference art already includes front/rear doors; we visually expose
+  // side connections so they read as actual passages rather than plain walls.
   for(const d of s.doors){
    if(d.main===false||d.x!==2&&d.x!==21)continue;
    const left=d.x===2,x=left?57:669,y=d.y*32-12;
    g.save();g.scale(scale,scale);
-   // Slim recessed doorway: placed entirely within the side-wall footprint,
-   // leaving the neighboring clue furniture uncovered.
-   g.fillStyle='#101820';g.fillRect(x-5,y-5,52,65);
-   g.fillStyle='#a28a68';g.fillRect(x-5,y-5,52,3);
-   g.fillStyle='#655b52';g.fillRect(x-5,y+56,52,3);
-   const a=g.createLinearGradient(x,y,x+42,y);
-   a.addColorStop(0,'#10151d');a.addColorStop(.5,'#25313a');a.addColorStop(1,'#090d12');
-   g.fillStyle=a;g.fillRect(x,y,42,55);
-   for(let i=0;i<4;i++){
-     g.fillStyle=i%2?'#6d6254':'#514c48';g.fillRect(x+5,y+9+i*10,32,2);
-   }
-   g.fillStyle='#a68a60';g.fillRect(left?x+39:x,y,3,55);
-   g.fillStyle='#e3c592';g.textAlign='center';g.font='bold 12px sans-serif';g.fillText(left?'‹':'›',x+21,y+31);
+   if(s.id==='lobby')drawLobbyPortal(g,left,x,y);
+   else drawSidePortal(g,left,x,y);
    g.restore();
   }
  }
@@ -1301,7 +1320,7 @@ window.MAPS=scenes;window.MAP_VERSION=VERSION;ready=true;
  }
  function drawForeground(){ /* No duplicate prop rendering over the image/sprite. */ }
  function cacheQA(){return {rooms:[...entries.keys()],loaded:[...entries.values()].filter(e=>e.ready).map(e=>e.id),failed:[...entries.values()].filter(e=>e.failed).map(e=>e.id),limit:MAX_LOADED,scale:'native 1254px',source:'inline lossless webp (no PNG network dependency)',builds:composited.size};}
- window.LS_CINEMA_V18={version:'eunha-v19c-self-contained-maps',designRooms:()=>Object.keys(rooms),layout:()=>rooms,renderRoom,renderBackground:composed,drawForeground,cacheQA,zoom:()=>window.TG_viewQA?.().zoom};
+ window.LS_CINEMA_V18={version:'eunha-v19h-lobby-door-zoom-fix',designRooms:()=>Object.keys(rooms),layout:()=>rooms,renderRoom,renderBackground:composed,drawForeground,cacheQA,zoom:()=>window.TG_viewQA?.().zoom};
  window.LS_CINEMA_V17=window.LS_CINEMA_V18;
  // Image and sprite are ready independently. The single game RAF owns rendering.
  const preload=()=>{getEntry(rooms.lobby);};
