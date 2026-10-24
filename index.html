@@ -152,7 +152,49 @@ body>nav.nav{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-
 .v3-opening.v23-intro.v25-film.ls-film13{align-items:stretch!important;justify-content:flex-start!important}
 .ls-film13 .ls-cinema-stage{width:100%!important;min-width:0;align-self:stretch;flex:1 1 auto}
 .ls-film13 .ls-cinema-menu{width:100%;min-width:0;align-self:stretch;box-sizing:border-box}
-</style></head><body><header><div class="btk-brand" aria-label="마지막 상영회, Made by BTK"><span class="btk-brand-title">◈ 마지막 상영회</span><span class="btk-brand-credit">MADE BY <strong>BTK</strong></span></div><div><small id="phaseTop">대기</small> <button class="btn outline" onclick="openAdmin()" style="padding:5px 8px;min-height:29px;font-size:11px">관리자</button> </div></header><main class="shell" id="app"></main><nav class="nav" id="nav"></nav><style>.v3-subtitle{color:var(--gold);letter-spacing:.15em;font:600 14px Georgia,serif;margin-top:-8px}
+</style>
+<style id="ls-v14-registration-film-polish">
+/* Reserved corner brand: registration only, without moving the central form. */
+.ls-registration .pzma-brand-v14{
+ position:absolute;z-index:5;top:calc(env(safe-area-inset-top,0px) + 11px);
+ left:calc(env(safe-area-inset-left,0px) + 13px);
+ display:inline-flex;gap:6px;align-items:center;
+ padding:5px 8px;max-width:calc(100% - 26px);
+ font:700 10px/1.3 system-ui,-apple-system,sans-serif;
+ letter-spacing:.095em;color:#e8d5ae;
+ background:rgba(5,13,24,.65);border:1px solid rgba(222,184,122,.35);
+ border-radius:6px;box-shadow:0 3px 13px rgba(0,0,0,.18);
+ white-space:nowrap;pointer-events:none;user-select:none
+}
+.ls-registration .pzma-brand-symbol-v14{font-size:10px;color:#c9a568}
+.ls-registration .pzma-brand-dash-v14{padding:0 2px;color:#8c9aa9}
+@media(max-height:540px) and (orientation:landscape){
+ .ls-registration .pzma-brand-v14{top:calc(env(safe-area-inset-top,0px) + 5px);left:calc(env(safe-area-inset-left,0px) + 8px);font-size:9px;padding:3px 6px}
+}
+/* Crossfade between independently decoded frames. Avoid toggling the same <img> src in-place. */
+.ls-film13 .ls-cinema-back{
+ opacity:0;filter:blur(17px) brightness(.24);transform:scale(1.11);
+ transition:opacity 1120ms cubic-bezier(.2,.65,.25,1);
+ will-change:opacity
+}
+.ls-film13 .ls-cinema-back.is-current{opacity:1}
+.ls-film13 .ls-cinema-front.ls-cinema-image{
+ opacity:0;transition:opacity 1120ms cubic-bezier(.2,.65,.25,1);
+ will-change:opacity,transform;backface-visibility:hidden
+}
+.ls-film13 .ls-cinema-front.ls-cinema-image.is-current{opacity:1}
+.ls-film13.is-ending .ls-cinema-back,.ls-film13.is-ending .ls-cinema-image{opacity:0!important}
+.ls-film13 .ls-cinema-image.ken-0{animation:lsCineFloatA 13s ease-in-out infinite alternate}
+.ls-film13 .ls-cinema-image.ken-1{animation:lsCineFloatB 13s ease-in-out infinite alternate}
+.ls-film13 .ls-cinema-progress{width:100%!important;transform:scaleX(0);transform-origin:left center;will-change:transform}
+@keyframes lsCineTextRevealV14{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.ls-film13 .ls-cinema-caption.cue-entering{animation:lsCineTextRevealV14 460ms ease-out both}
+@media(prefers-reduced-motion:reduce){
+ .ls-film13 .ls-cinema-back,.ls-film13 .ls-cinema-image{transition-duration:250ms!important;animation:none!important}
+ .ls-film13 .ls-cinema-caption.cue-entering{animation-duration:180ms}
+}
+</style>
+</head><body><header><div class="btk-brand" aria-label="마지막 상영회, Made by BTK"><span class="btk-brand-title">◈ 마지막 상영회</span><span class="btk-brand-credit">MADE BY <strong>BTK</strong></span></div><div><small id="phaseTop">대기</small> <button class="btn outline" onclick="openAdmin()" style="padding:5px 8px;min-height:29px;font-size:11px">관리자</button> </div></header><main class="shell" id="app"></main><nav class="nav" id="nav"></nav><style>.v3-subtitle{color:var(--gold);letter-spacing:.15em;font:600 14px Georgia,serif;margin-top:-8px}
 .v3-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.v3-grid .btn{width:100%}.v3-meta{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.v3-tabs{display:flex;gap:6px;overflow-x:auto;margin:12px 0}.v3-tabs .btn{white-space:nowrap;min-height:38px;padding:7px 12px}.v3-timeline{border-left:2px solid #5c5241;margin-left:7px;padding-left:16px}.v3-timeline .entry{padding:13px 0}.v3-timeline b{color:var(--gold)}.v3-profile{display:grid;grid-template-columns:100px 1fr;gap:14px;align-items:center}.v3-profile img{width:100%;height:125px;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line)}.v3-cast-img{width:52px;height:64px;object-fit:cover;object-position:top;border-radius:8px;background:#263342}.v3-cast-fallback{width:52px;height:64px;display:grid;place-items:center;border-radius:8px;background:#263342;color:var(--gold);font-size:23px}.v3-line{white-space:pre-line;line-height:1.85}.v3-score{font-variant-numeric:tabular-nums;color:var(--gold);font-size:24px;font-weight:800}.v3-table{width:100%;border-collapse:collapse;font-size:12px}.v3-table th,.v3-table td{border-bottom:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}.v3-table th{color:var(--gold)}.v3-check{display:flex;align-items:flex-start;gap:10px;margin:9px 0;padding:12px;background:#ffffff07;border-radius:9px}.v3-check input{margin-top:5px}.v3-notice{position:fixed;inset:0;z-index:12000;background:#000b;display:grid;place-items:center;padding:20px}.v3-notice>div{max-width:520px;width:100%;background:var(--surface);padding:20px;border:1px solid var(--gold);border-radius:16px}.v3-opening{position:fixed;inset:0;z-index:13000;background:#020406;display:flex;flex-direction:column;justify-content:center;align-items:center}.v3-opening video{width:100%;max-height:calc(100dvh - 160px);object-fit:contain;background:#000}.v3-opening-bar{display:flex;justify-content:center;gap:10px;padding:12px;flex-wrap:wrap}.v3-opening .v3-opening-fallback{max-width:620px;padding:20px;line-height:1.85}.v3-memo-button{position:fixed;right:15px;bottom:calc(86px + env(safe-area-inset-bottom,0px));z-index:8500;box-shadow:0 5px 20px #0008}.v3-brief{color:var(--mute);font-size:13px}.v3-message{padding:12px 14px;border-radius:12px;margin:10px 0;background:#ffffff09;white-space:pre-wrap}.v3-message.me{background:#4a3b2266;margin-left:28px}.v3-message.them{margin-right:28px}.v3-locked{color:#b8c3d1;border:1px solid #4e5662;padding:12px;border-radius:9px}.v3-badge{display:inline-block;border-radius:999px;border:1px solid #8b734e;padding:2px 9px;font-size:11px;color:var(--gold)}.v3-end-title{font:700 28px Georgia,serif;color:var(--gold);margin-top:8px}.v3-warning{color:#ffc5a1}.v3-empty{color:var(--mute);padding:12px 0}.v3-secret{border-left:3px solid #b38a56;background:#2b211955;padding:13px 15px;border-radius:0 9px 9px 0}nav.nav{grid-template-columns:repeat(5,minmax(0,1fr))}nav.nav button{font-size:10.5px}.home-timer b{font-variant-numeric:tabular-nums;font-size:42px;color:var(--gold)}.start-lead{line-height:1.8}.start-title{font-family:Georgia,'Noto Serif KR',serif}.v3-movie{font-family:Georgia,serif;color:var(--gold)}
 @media(min-width:700px){.v3-opening video{max-width:1100px}.v3-grid{gap:14px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
@@ -275,7 +317,7 @@ function render(){
  persist();
 }
 function startPage(){
- return `<div class="start-screen ls-registration"><div class="btk-start-brand"><span class="btk-start-title">◈ 마지막 상영회</span><span class="btk-start-credit">MADE BY <strong>BTK</strong></span></div><div class="start-box"><h2>${state.pendingReg?'배정 대기':'참가자 등록'}</h2>${state.pendingReg?`<b class="ls-waiting-name">${safe(state.name)}</b><p class="start-hint" role="status">관리자의 배역 배정을 기다려 주세요.</p>${ui('','등록 취소','cancelReg()','outline')}`:`<label for="realName">참가자 이름</label><input class="field" id="realName" maxlength="24" autocomplete="name" placeholder="이름 입력"><label for="realGender">참가자 성별</label><div class="gender-choices"><button class="gender-btn" id="genderMale" aria-pressed="false" onclick="chooseGender('남성')">남성</button><button class="gender-btn" id="genderFemale" aria-pressed="false" onclick="chooseGender('여성')">여성</button></div><input id="realGender" type="hidden" value="">${ui('','참가 등록','assign()','primary')}`}</div><button class="start-admin" type="button" onclick="openAdmin()">관리자 입장</button></div>`;
+ return `<div class="start-screen ls-registration"><div class="pzma-brand-v14" aria-label="PZMAGAMES-BTK"><span class="pzma-brand-symbol-v14" aria-hidden="true">◆</span><span>PZMAGAMES<span class="pzma-brand-dash-v14">-</span>BTK</span></div><div class="btk-start-brand"><span class="btk-start-title">◈ 마지막 상영회</span><span class="btk-start-credit">MADE BY <strong>BTK</strong></span></div><div class="start-box"><h2>${state.pendingReg?'배정 대기':'참가자 등록'}</h2>${state.pendingReg?`<b class="ls-waiting-name">${safe(state.name)}</b><p class="start-hint" role="status">관리자의 배역 배정을 기다려 주세요.</p>${ui('','등록 취소','cancelReg()','outline')}`:`<label for="realName">참가자 이름</label><input class="field" id="realName" maxlength="24" autocomplete="name" placeholder="이름 입력"><label for="realGender">참가자 성별</label><div class="gender-choices"><button class="gender-btn" id="genderMale" aria-pressed="false" onclick="chooseGender('남성')">남성</button><button class="gender-btn" id="genderFemale" aria-pressed="false" onclick="chooseGender('여성')">여성</button></div><input id="realGender" type="hidden" value="">${ui('','참가 등록','assign()','primary')}`}</div><button class="start-admin" type="button" onclick="openAdmin()">관리자 입장</button></div>`;
 }
 function chooseGender(g){const input=el('realGender');if(input)input.value=g;for(const [id,value] of [['genderMale','남성'],['genderFemale','여성']]){const b=el(id);if(b){b.classList.toggle('chosen',g===value);b.setAttribute('aria-pressed',String(g===value));}}}
 async function assign(){
@@ -469,31 +511,80 @@ function lsOpeningCineTick(host){
  if(at>=LS_OPENING_DURATION_V13){host._running=false;lsOpeningCineRender(host,LS_OPENING_DURATION_V13);return;}
  lsOpeningCineRender(host,at);host._raf=requestAnimationFrame(()=>lsOpeningCineTick(host));
 }
+// v14: preload/decode upcoming frames and only crossfade after the image is ready.
+function lsOpeningWarmFrameV14(host,frame){
+ if(frame<0||!LS_OPENING_FRAMES_V13[frame])return null;
+ if(!host._frameWarm)host._frameWarm=new Map();
+ if(host._frameWarm.has(frame))return host._frameWarm.get(frame);
+ const img=new Image();img.decoding='async';img.src=LS_OPENING_FRAMES_V13[frame];
+ const ready=typeof img.decode==='function'?img.decode().catch(()=>{}):new Promise(resolve=>{if(img.complete)resolve();else{img.onload=resolve;img.onerror=resolve;}});
+ const entry={img,ready};host._frameWarm.set(frame,entry);
+ // Keep just the upcoming and most recent decoded image in memory.
+ while(host._frameWarm.size>3){const oldest=host._frameWarm.keys().next().value;host._frameWarm.delete(oldest);}
+ return entry;
+}
+function lsOpeningSwitchFrameV14(host,frame,ci){
+ if(frame<0||frame===host._frame||frame===host._pendingFrame||host._disposed)return;
+ const request=++host._sceneSerial;host._pendingFrame=frame;
+ const warmed=lsOpeningWarmFrameV14(host,frame);
+ Promise.resolve(warmed?.ready).then(()=>{
+  if(host._disposed||!host.isConnected||request!==host._sceneSerial)return;
+  const next=1-host._activeSlot,previous=host._activeSlot;
+  const incoming=host._imageLayers[next],outgoing=host._imageLayers[previous];
+  const bgIncoming=host._bgLayers[next],bgOutgoing=host._bgLayers[previous];
+  incoming.src=LS_OPENING_FRAMES_V13[frame];
+  incoming.classList.remove('ken-0','ken-1');incoming.classList.add('ken-'+(ci%2));
+  bgIncoming.style.backgroundImage='url("'+LS_OPENING_FRAMES_V13[frame]+'")';
+  // The old frame remains on screen while the replacement is decoded.
+  requestAnimationFrame(()=>{
+   if(host._disposed||!host.isConnected||request!==host._sceneSerial)return;
+   incoming.classList.add('is-current');bgIncoming.classList.add('is-current');
+   outgoing.classList.remove('is-current');bgOutgoing.classList.remove('is-current');
+   host._activeSlot=next;host._frame=frame;host._pendingFrame=-1;
+  });
+ }).catch(()=>{if(request===host._sceneSerial)host._pendingFrame=-1;});
+}
 function lsOpeningCineRender(host,at){
  const list=LS_OPENING_CUES_V13;let ci=-1;
  for(let i=0;i<list.length;i++){if(at>=list[i].start){ci=i;}else break;}
- const cue=ci>=0?list[ci]:null,visible=cue&&at<=cue.end,frame=cue?.image??-1;
- // Keep the previous image until the next cue; title cards replace frames only in the last section.
- if(frame>=0&&host._frame!==frame){
-  host._frame=frame;const url=LS_OPENING_FRAMES_V13[frame],img=host.querySelector('#lsCineFrontV13'),bg=host.querySelector('#lsCineBackV13');
-  img.classList.remove('ken-0','ken-1');img.style.opacity='0.45';img.src=url;bg.style.backgroundImage='url("'+url+'")';
-  img.offsetWidth;img.classList.add('ken-'+(ci%2));img.style.opacity='1';
+ const cue=ci>=0?list[ci]:null,visible=!!(cue&&at<=cue.end),frame=cue?.image??-1;
+ if(frame>=0)lsOpeningSwitchFrameV14(host,frame,ci);
+ // Begin decoding the next scene before its scheduled entrance.
+ for(let i=ci+1;i<list.length;i++){
+  const upcoming=list[i];
+  if(upcoming.image<0)continue;
+  if(upcoming.image!==frame&&upcoming.start-at<=5.5)lsOpeningWarmFrameV14(host,upcoming.image);
+  break;
  }
- const title=host.querySelector('#lsCineTitleV13'),screen=host.querySelector('#lsCineFrontV13');
- title.classList.toggle('on',at>=146);if(at>=146)screen.style.opacity='0';
+ const title=host.querySelector('#lsCineTitleV13');
+ const ending=at>=146;title.classList.toggle('on',ending);host.classList.toggle('is-ending',ending);
  const n=host.querySelector('#lsCineWhoV13'),pn=host.querySelector('#lsCinePlayerV13'),d=host.querySelector('#lsCineCaptionV13');
- if(visible){const disp=lsOpeningCineDisplayNames(cue);n.hidden=!disp.speaker;n.textContent=disp.speaker;pn.hidden=!disp.actor;pn.textContent=disp.actor;d.hidden=false;d.textContent=cue.text;}
- else{n.hidden=true;pn.hidden=true;d.hidden=true;}
- const time=host.querySelector('#lsCineTimeV13');time.textContent=String(Math.floor(at/60)).padStart(2,'0')+':'+String(Math.floor(at%60)).padStart(2,'0')+' / 02:54';
- host.querySelector('#lsCineProgressV13').style.width=(at/LS_OPENING_DURATION_V13*100).toFixed(2)+'%';
+ if(host._cueIndex!==ci||host._cueVisible!==visible){
+  host._cueIndex=ci;host._cueVisible=visible;
+  if(visible){
+   const disp=lsOpeningCineDisplayNames(cue);
+   n.hidden=!disp.speaker;n.textContent=disp.speaker;
+   pn.hidden=!disp.actor;pn.textContent=disp.actor;
+   d.hidden=false;d.textContent=cue.text;
+   const caption=host.querySelector('.ls-cinema-caption');
+   caption.classList.remove('cue-entering');void caption.offsetWidth;caption.classList.add('cue-entering');
+  }else{n.hidden=true;pn.hidden=true;d.hidden=true;}
+ }
+ // Text and layout update only once per second, not on every animation frame.
+ const seconds=Math.floor(at);
+ if(host._clockSecond!==seconds){host._clockSecond=seconds;
+  host.querySelector('#lsCineTimeV13').textContent=String(Math.floor(at/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0')+' / 02:54';
+ }
+ host.querySelector('#lsCineProgressV13').style.transform='scaleX('+(at/LS_OPENING_DURATION_V13).toFixed(5)+')';
 }
+
 function openOpening(options={}){
  if(!canViewOpening2042()||!state.introRun||options.stageRun!==state.introRun)return false;
  const old=el('opening2042');if(old){if(options.restart)closeOpening();else return true;}
  const host=document.createElement('div');host.id='opening2042';host.className='v3-opening v23-intro v25-film ls-film13';host.setAttribute('role','dialog');host.setAttribute('aria-modal','true');host.setAttribute('aria-label','마지막 상영회 HTML 오프닝 애니메이션');
- host.innerHTML=`<div class="ls-cinema-stage"><div id="lsCineBackV13" class="ls-cinema-back"></div><img id="lsCineFrontV13" class="ls-cinema-front" alt="은하극장 시사회 장면"/><div class="ls-cinema-shade"></div><div id="lsCineTitleV13" class="ls-cinema-title-card"><p>THE LAST SCREENING · 2042</p><h2>마지막<br>상영회</h2><p>상영이 끝난 뒤, 드러나는 진실.</p></div><div class="ls-cinema-top"><span>◈ EUNHA CINEMA</span><span class="ls-clock" id="lsCineTimeV13">00:00 / 02:54</span></div><div class="ls-cinema-caption" aria-live="off"><div class="ls-speaker" id="lsCineWhoV13" hidden></div><div class="ls-cinema-player" id="lsCinePlayerV13" hidden></div><div class="ls-cinema-dialogue" id="lsCineCaptionV13" hidden></div></div><div class="ls-cinema-progress" id="lsCineProgressV13"></div></div><div class="ls-cinema-menu"><button type="button" id="openingSound2042" onclick="toggleOpeningSound2042()">소리 켜기</button><span class="grow"></span><button type="button" onclick="closeOpening()">닫기</button></div>`;
+ host.innerHTML=`<div class="ls-cinema-stage"><div id="lsCineBackV13" class="ls-cinema-back is-current"></div><div id="lsCineBackV14" class="ls-cinema-back"></div><img id="lsCineFrontV13" class="ls-cinema-front ls-cinema-image is-current ken-0" alt="은하극장 시사회 장면"/><img id="lsCineNextV14" class="ls-cinema-front ls-cinema-image" alt="" aria-hidden="true"/><div class="ls-cinema-shade"></div><div id="lsCineTitleV13" class="ls-cinema-title-card"><p>THE LAST SCREENING · 2042</p><h2>마지막<br>상영회</h2><p>상영이 끝난 뒤, 드러나는 진실.</p></div><div class="ls-cinema-top"><span>◈ EUNHA CINEMA</span><span class="ls-clock" id="lsCineTimeV13">00:00 / 02:54</span></div><div class="ls-cinema-caption" aria-live="off"><div class="ls-speaker" id="lsCineWhoV13" hidden></div><div class="ls-cinema-player" id="lsCinePlayerV13" hidden></div><div class="ls-cinema-dialogue" id="lsCineCaptionV13" hidden></div></div><div class="ls-cinema-progress" id="lsCineProgressV13"></div></div><div class="ls-cinema-menu"><button type="button" id="openingSound2042" onclick="toggleOpeningSound2042()">소리 켜기</button><span class="grow"></span><button type="button" onclick="closeOpening()">닫기</button></div>`;
  document.body.appendChild(host);
- host._disposed=false;host._frame=-1;host._running=false;host._audioAllowed=false;
+ host._disposed=false;host._frame=0;host._pendingFrame=-1;host._sceneSerial=0;host._activeSlot=0;host._imageLayers=[host.querySelector("#lsCineFrontV13"),host.querySelector("#lsCineNextV14")];host._bgLayers=[host.querySelector("#lsCineBackV13"),host.querySelector("#lsCineBackV14")];host._running=false;host._audioAllowed=false;
  // All devices compute their opening position against the shared stage start when available.
  // This is a monotonic fallback if playing offline or when a room lacks timerEnd.
  let offset=0;
@@ -513,7 +604,7 @@ function openOpening(options={}){
 }
 function playOpening2042(auto=false){
  const host=el('opening2042');if(!host||host._disposed)return;
- if(!host._running){if(host._offset>=LS_OPENING_DURATION_V13){host._offset=0;host._frame=-1;host._audioAllowed=false;}host._started=performance.now()-host._offset*1000;host._running=true;host._raf=requestAnimationFrame(()=>lsOpeningCineTick(host));}
+ if(!host._running){if(host._offset>=LS_OPENING_DURATION_V13){host._offset=0;host._frame=0;host._sceneSerial++;host._pendingFrame=-1;host._audioAllowed=false;}host._started=performance.now()-host._offset*1000;host._running=true;host._raf=requestAnimationFrame(()=>lsOpeningCineTick(host));}
 }
 function lsOpeningResumeAudioV13(host){
  const a=host._audio;if(!a)return;const seconds=Math.min(173.9,Math.max(0,(performance.now()-host._started)/1000));
@@ -527,7 +618,7 @@ function toggleOpeningSound2042(){
  if(host._audioAllowed){if(!host._running)playOpening2042(false);lsOpeningResumeAudioV13(host);}else{try{host._audio?.pause();}catch(_){}}
  lsOpeningSyncAudioButtonV13(host);
 }
-function closeOpening(){const h=el('opening2042');if(!h)return;h._disposed=true;h._running=false;cancelAnimationFrame(h._raf);if(h._audio){try{h._audio.pause();h._audio.removeAttribute('src');h._audio.load();}catch(_){}}h.remove();}
+function closeOpening(){const h=el('opening2042');if(!h)return;h._disposed=true;h._sceneSerial++;h._frameWarm?.clear();h._running=false;cancelAnimationFrame(h._raf);if(h._audio){try{h._audio.pause();h._audio.removeAttribute('src');h._audio.load();}catch(_){}}h.remove();}
 function installHelp(){alert('Android Chrome: 브라우저 메뉴 → 앱 설치 또는 홈 화면에 추가\niPhone Safari: 공유 → 홈 화면에 추가\nHTTPS 게시 주소에서 사용할 수 있습니다.');}
 function safeKey(k){return String(k).replace(/[.#$\[\]\/]/g,'_');}
 function typingNow(){const a=document.activeElement;return a&&['INPUT','TEXTAREA','SELECT'].includes(a.tagName);}
