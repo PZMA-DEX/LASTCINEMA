@@ -894,7 +894,7 @@ for(const s of Object.values(scenes)){
 }
 const spotIndex=Object.fromEntries(Object.values(scenes).flatMap(s=>s.spots.map(p=>[p.id,{...p,scene:s.id}])));
 const cluesAt=id=>D.clues.filter(c=>c.spot===id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let opened=false,admin=false,modal=false,busy=false,zoom=3,lastMove=-Infinity,held=null,frame=0,px=0,py=0,canvasScale=1,offsetX=0,offsetY=0,ready=false;
+let opened=false,admin=false,modal=false,busy=false,zoom=2,lastMove=-Infinity,held=null,frame=0,px=0,py=0,canvasScale=1,offsetX=0,offsetY=0,ready=false;
 let S={f:'lobby',x:scenes.lobby.spawn.x,y:scenes.lobby.spawn.y,dir:'down',role:1,phase:1,used:{1:0,2:0,3:0},got:{},seen:{},visited:{}};
 // Linear time-based tile traversal: no acceleration reset, second easing layer, or key-repeat clock.
 const STEP_MS=148,SAVE_MS=450,NETWORK_MS=175;
@@ -1100,7 +1100,7 @@ function resize(){
  const status=$('status').getBoundingClientRect(),hint=$('hint').getBoundingClientRect();
  metrics.width=r.width||width;metrics.height=r.height||height;metrics.dpr=dpr;metrics.top=Math.max(top.height+status.height+12,64);metrics.bottom=Math.max(controls.height+hint.height+18,116);
 }
-function draw(time){const s=scenes[S.f];if(!s)return;const dpr=Math.min(window.devicePixelRatio||1,2),w=cv.width,h=cv.height,marginTop=metrics.top*dpr,marginBottom=metrics.bottom*dpr;ctx.imageSmoothingEnabled=false;rr(ctx,0,0,w,h,'#0d121b');let sc;if(zoom===1)sc=Math.min(w/(s.w*32),Math.max(64*dpr,h-marginTop-marginBottom)/(s.h*32));else{const tileCSS=Math.min(zoom===2?25:31,Math.max(16,Math.min(metrics.width/10.5,(metrics.height-metrics.top-metrics.bottom)/7.2)));sc=tileCSS*dpr/32;}sc=Math.max(.2,Math.min(sc,1.6*dpr));canvasScale=sc;const worldW=s.w*32*sc,worldH=s.h*32*sc;offsetX=worldW<=w?(w-worldW)/2:Math.max(w-worldW,Math.min(0,w/2-(px+.5)*32*sc));const usable=Math.max(64*dpr,h-marginTop-marginBottom);offsetY=worldH<=usable?marginTop+(usable-worldH)/2:Math.max(h-marginBottom-worldH,Math.min(marginTop,marginTop+usable/2-(py+.5)*32*sc));const roomBackground=window.LS_CINEMA_V18?.renderBackground?.(s)||background(s);ctx.imageSmoothingEnabled=roomBackground.width>s.w*32;ctx.imageSmoothingQuality='high';ctx.drawImage(roomBackground,offsetX,offsetY,worldW,worldH);ctx.imageSmoothingEnabled=false;
+function draw(time){const s=scenes[S.f];if(!s)return;const dpr=Math.min(window.devicePixelRatio||1,2),w=cv.width,h=cv.height,marginTop=metrics.top*dpr,marginBottom=metrics.bottom*dpr;ctx.imageSmoothingEnabled=false;rr(ctx,0,0,w,h,'#0d121b');let sc;if(zoom===1)sc=Math.min(w/(s.w*32),Math.max(64*dpr,h-marginTop-marginBottom)/(s.h*32));else{const tileCSS=Math.min(zoom===2?23:29,Math.max(15,Math.min(metrics.width/11.5,(metrics.height-metrics.top-metrics.bottom)/7.8)));sc=tileCSS*dpr/32;}sc=Math.max(.2,Math.min(sc,1.6*dpr));canvasScale=sc;const worldW=s.w*32*sc,worldH=s.h*32*sc;offsetX=worldW<=w?(w-worldW)/2:Math.max(w-worldW,Math.min(0,w/2-(px+.5)*32*sc));const usable=Math.max(64*dpr,h-marginTop-marginBottom);offsetY=worldH<=usable?marginTop+(usable-worldH)/2:Math.max(h-marginBottom-worldH,Math.min(marginTop,marginTop+usable/2-(py+.5)*32*sc));const roomBackground=window.LS_CINEMA_V18?.renderBackground?.(s)||background(s);ctx.imageSmoothingEnabled=roomBackground.width>s.w*32;ctx.imageSmoothingQuality='high';ctx.drawImage(roomBackground,offsetX,offsetY,worldW,worldH);ctx.imageSmoothingEnabled=false;
 if(visibleSpotsScene!==S.f||time-visibleSpotsAt>250){visibleSpotsScene=S.f;visibleSpotsAt=time;visibleSpots=s.spots.filter(p=>{const all=cluesAt(p.id);return all.some(c=>c.phase<=phase())&&!all.every(c=>c.kind!=='bag'&&(S.got[c.id]||owner(c)));});}
 for(const p of visibleSpots){const a=.5+.5*Math.sin(time/370+p.x),x=offsetX+(p.x+.5)*32*sc,y=offsetY+(p.y+.3)*32*sc;rr(ctx,x-5*sc,y-sc,10*sc,2*sc,`rgba(255,224,144,${a})`);rr(ctx,x-sc,y-5*sc,2*sc,10*sc,`rgba(255,224,144,${a})`);}
 if(routeTarget&&scenes[S.f].doors.includes(routeTarget)){const x=offsetX+(routeTarget.x+.5)*32*sc,y=offsetY+(routeTarget.y+.5)*32*sc;ctx.strokeStyle='#f9df8d';ctx.lineWidth=3*dpr;ctx.strokeRect(x-18*sc,y-18*sc,36*sc,36*sc);}
@@ -1200,7 +1200,7 @@ if(new URL(location.href).searchParams.has('qa'))window.TG_controlsQA=()=>({
 function geometryQA(){const result={version:VERSION,scenes:{},phases:{}};for(const s of Object.values(scenes))result.scenes[s.id]={w:s.w,h:s.h,objects:s.objects.length,spots:s.spots.length,doors:s.doors.length};for(const ph of [1,2]){const start=['lobby',scenes.lobby.spawn.x,scenes.lobby.spawn.y],q=[start],seen=new Set([start.join(':')]);const free=(f,x,y)=>{const a=scenes[f];return a&&x>=0&&y>=0&&x<a.w&&y<a.h&&a.grid[y][x]!== '#'&&a.grid[y][x]!=='X'&&(ph>=2||f!=='office');};for(let i=0;i<q.length;i++){const[f,x,y]=q[i],ns=Object.values(DIR).map(([dx,dy])=>[f,x+dx,y+dy]);for(const d of scenes[f].doors)if(d.x===x&&d.y===y&&!(ph===1&&d.to==='office'))ns.push([d.to,d.tx,d.ty]);for(const n of ns){const k=n.join(':');if(!seen.has(k)&&free(...n)){seen.add(k);q.push(n);}}}const missing=D.clues.filter(c=>c.phase<=ph).filter(c=>{const p=spotIndex[c.spot];return !p||!Object.values(DIR).some(([dx,dy])=>seen.has([p.scene,p.x+dx,p.y+dy].join(':')));}).map(c=>c.id);result.phases[ph]={reachable:seen.size,unreachableClues:missing,passed:missing.length===0};}return result;}
 window.TG_motionQA=()=>({...motionStats,frameTimes:[...motionStats.frameTimes],render:{x:px,y:py},logical:{x:S.x,y:S.y,f:S.f},step:step?{...step,door:step.door?.to||null}:null,held,doorLatch,pendingInteraction,speedTilesPerSecond:1000/STEP_MS,saveIntervalMs:SAVE_MS});
 window.TG_mapGeometryQA=geometryQA;window.TG_mapQA=geometryQA;window.TG_viewQA=()=>({version:VERSION,opened,scene:S.f,zoom,sprite:{widthTiles:1*SPRITE_SCALE,heightTiles:1.5*SPRITE_SCALE,authored:[32,48],scale:SPRITE_SCALE},tileCSS:32*canvasScale/(Math.min(window.devicePixelRatio||1,2)),viewport:{w:cv.width,h:cv.height},render:{x:px,y:py},state:{...S}});
-if(new URL(location.href).searchParams.has('qa'))window.TG_sceneQA={scenes,spotIndex,tileFree,move,inspect,interact,render:draw,background,sprite,geometry:geometryQA,advance(ms){advanceMotion(ms);draw(performance.now());},place(id,x,y){if(!scenes[id]||!tileFree(id,x,y,2))return false;S.f=id;S.x=x;S.y=y;step=null;doorLatch=null;px=x;py=y;visibleSpotsAt=-Infinity;updateHud();return true;},visit(id){if(!scenes[id])return;S.f=id;const p=findSafe(scenes[id]);S.x=p.x;S.y=p.y;step=null;doorLatch=null;lastTick=0;px=S.x;py=S.y;visibleSpotsAt=-Infinity;if(opened){updateHud();draw(performance.now());}},setZoom(){zoom=3;},getCanvas:()=>cv};
+if(new URL(location.href).searchParams.has('qa'))window.TG_sceneQA={scenes,spotIndex,tileFree,move,inspect,interact,render:draw,background,sprite,geometry:geometryQA,advance(ms){advanceMotion(ms);draw(performance.now());},place(id,x,y){if(!scenes[id]||!tileFree(id,x,y,2))return false;S.f=id;S.x=x;S.y=y;step=null;doorLatch=null;px=x;py=y;visibleSpotsAt=-Infinity;updateHud();return true;},visit(id){if(!scenes[id])return;S.f=id;const p=findSafe(scenes[id]);S.x=p.x;S.y=p.y;step=null;doorLatch=null;lastTick=0;px=S.x;py=S.y;visibleSpotsAt=-Infinity;if(opened){updateHud();draw(performance.now());}},setZoom(){zoom=2;},getCanvas:()=>cv};
 window.MAPS=scenes;window.MAP_VERSION=VERSION;ready=true;
 })();
 
@@ -1268,19 +1268,27 @@ window.MAPS=scenes;window.MAP_VERSION=VERSION;ready=true;
    g.fillStyle='#c8a56a';g.fillRect(x-2,y-12,4,20);g.fillStyle='#f8dc9a';g.beginPath();g.arc(x,y-2,5,0,Math.PI*2);g.fill();
   }
   function drawLobbyPortal(g,left,x,y){
-   const edge=left?1:-1;
-   g.fillStyle='#29313d';g.fillRect(x-8,y-10,62,78);
-   g.fillStyle='#a98b61';g.fillRect(x-8,y-10,62,4);
-   g.fillStyle='#151d27';g.fillRect(x-2,y-4,48,64);
-   const grad=g.createLinearGradient(x,y,x+44,y);grad.addColorStop(0,'#0c1219');grad.addColorStop(.52,'#1b2630');grad.addColorStop(1,'#0a0f15');
-   g.fillStyle=grad;g.fillRect(x+2,y,40,56);
-   g.fillStyle='rgba(227,197,146,.9)';g.fillRect(left?x+39:x+3,y+2,2,52);
-   g.fillStyle='rgba(255,219,162,.18)';g.fillRect(left?x+6:x+18,y+7,14,42);
-   g.fillStyle='#b48d58';g.fillRect(x+10,y+57,24,4);
-   g.fillStyle='#7e1526';g.fillRect(x+12,y+58,20,18);
-   g.strokeStyle='#cda165';g.lineWidth=1;g.strokeRect(x+12,y+58,20,18);
-   for(let i=0;i<3;i++){g.fillStyle=i%2?'#6d6357':'#514b46';g.fillRect(x+8,y+12+i*12,28,2);}
-   drawLamp(g,left?x+52:x-6,y+8);
+   // Make the side connection read as an open passage cut through the wall,
+   // not as a freestanding cabinet-like object.
+   const outerX=x-12, outerY=y-12, outerW=58, outerH=86;
+   g.fillStyle='#36404d';g.fillRect(outerX,outerY,outerW,outerH);
+   g.fillStyle='#ad9268';g.fillRect(outerX,outerY,outerW,4);
+   g.fillStyle='#22303a';g.fillRect(outerX+4,outerY+4,outerW-8,outerH-12);
+   const openingX=left?x+4:x+2, openingW=34, openingY=y+4, openingH=54;
+   const grad=g.createLinearGradient(openingX,openingY,openingX+openingW,openingY);
+   grad.addColorStop(0,'#0d1218');grad.addColorStop(.55,'#1a2630');grad.addColorStop(1,'#090d12');
+   g.fillStyle=grad;g.fillRect(openingX,openingY,openingW,openingH);
+   // subtle frame, one bright jamb, no slats
+   g.fillStyle='#c5a16d';g.fillRect(left?openingX+openingW-3:openingX,openingY,3,openingH);
+   g.fillStyle='rgba(255,227,170,.15)';g.fillRect(left?openingX+5:openingX+13,openingY+6,11,openingH-12);
+   // floor continuation at the threshold so it feels cut into the wall.
+   g.fillStyle='#b48d58';g.fillRect(x+7,y+56,26,4);
+   g.fillStyle='#7e1526';g.fillRect(x+9,y+60,22,16);
+   g.strokeStyle='#cda165';g.lineWidth=1;g.strokeRect(x+9,y+60,22,16);
+   // mask the outside side so the opening blends into the wall rather than floating.
+   g.fillStyle='#0a1017';
+   if(left) g.fillRect(outerX-10,outerY,12,outerH); else g.fillRect(outerX+outerW-2,outerY,12,outerH);
+   drawLamp(g,left?x+50:x-4,y+10);
    g.fillStyle='#e7c88d';g.font='bold 12px sans-serif';g.textAlign='center';g.fillText(left?'‹':'›',x+21,y+33);
   }
   function drawSidePortal(g,left,x,y){
@@ -1320,7 +1328,7 @@ window.MAPS=scenes;window.MAP_VERSION=VERSION;ready=true;
  }
  function drawForeground(){ /* No duplicate prop rendering over the image/sprite. */ }
  function cacheQA(){return {rooms:[...entries.keys()],loaded:[...entries.values()].filter(e=>e.ready).map(e=>e.id),failed:[...entries.values()].filter(e=>e.failed).map(e=>e.id),limit:MAX_LOADED,scale:'native 1254px',source:'inline lossless webp (no PNG network dependency)',builds:composited.size};}
- window.LS_CINEMA_V18={version:'eunha-v19h-lobby-door-zoom-fix',designRooms:()=>Object.keys(rooms),layout:()=>rooms,renderRoom,renderBackground:composed,drawForeground,cacheQA,zoom:()=>window.TG_viewQA?.().zoom};
+ window.LS_CINEMA_V18={version:'eunha-v19i-lobby-opening-zoom2',designRooms:()=>Object.keys(rooms),layout:()=>rooms,renderRoom,renderBackground:composed,drawForeground,cacheQA,zoom:()=>window.TG_viewQA?.().zoom};
  window.LS_CINEMA_V17=window.LS_CINEMA_V18;
  // Image and sprite are ready independently. The single game RAF owns rendering.
  const preload=()=>{getEntry(rooms.lobby);};
