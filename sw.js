@@ -1,5 +1,5 @@
 'use strict';
-const BUILD='last-screening-v21-2-small-20261025';
+const BUILD='last-screening-v21-3-controls-20261025';
 const CACHE='last-screening-2042-'+BUILD;
 // Room art, actor sheets, portraits and all engine modules live inside index.html.
 // Cache installation never depends on obsolete external maps or engine paths.
