@@ -1,5 +1,5 @@
 'use strict';
-const BUILD='last-screening-v36-female3-male1-20261029';
+const BUILD='last-screening-v37-admin-kimsejin-male-20261029';
 const CACHE='last-screening-2042-'+BUILD;
 // Room art, actor sheets, portraits and all engine modules live inside index.html.
 // Cache installation never depends on obsolete external maps or engine paths.
